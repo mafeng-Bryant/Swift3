@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
+		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -14,12 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SDWebImage.xcscheme</key>
+		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
+		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>432ECC54282C84882B482CCB4CF227FC</key>
+		<key>29DD99664D189A7CA206368F493B1E0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>63F8955EE637A8AF6F423D8FD28FA7EF</key>
+		<key>97D633547700BB0160623EB96019F06F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F41B19F03E341823CFC41AB85CB1018D</key>
+		<key>A415187BC2E618A9565AC16FC9E775FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F76BE865CFAA8A75FF18390E285F7C83</key>
+		<key>E1228665363170C025C9D88CA594D3BD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

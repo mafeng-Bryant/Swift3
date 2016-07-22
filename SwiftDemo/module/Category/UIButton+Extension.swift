@@ -10,76 +10,45 @@ import Foundation
 
 extension UIButton{
 
-    convenience init(title: String, titleColor: UIColor = kNormalColor, backColor: UIColor = kWhiteColor){
+    convenience init(x: CGFloat, iconName: NSString, target: AnyObject?, action: Selector, imageEdgeInsets: UIEdgeInsets){
      self.init()
-        setTitle(title, forState: UIControlState.Normal)
-       setTitleColor(titleColor, forState: UIControlState.Normal)
-        backgroundColor = backColor
-    }
-
-    convenience init(backgroundImageName:String){
-     self.init()
-        setBackgroundImage(UIImage(named: backgroundImageName), forState: UIControlState.Normal)
-        setBackgroundImage(UIImage(named: backgroundImageName + "_highlighted"), forState: UIControlState.Highlighted)
-        sizeToFit()
+     frame = CGRect(x: x,y: 0,width: 44,height: 44)
+     setImage(UIImage(named: iconName as String), forState: UIControlState.Normal)
+     setImage(UIImage(named: iconName as String), forState: UIControlState.Highlighted)
+     self.imageEdgeInsets = imageEdgeInsets
+     addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
     }
     
-    
-    convenience init(title: String, imageName: String, color: UIColor, fontSize: CGFloat) {
+    /// 导航栏排序按钮
+    convenience init(sortTarget: AnyObject?, action: Selector) {
         self.init()
-        
-        setTitle(title, forState: UIControlState.Normal)
-        setImage(UIImage(named: imageName), forState: UIControlState.Normal)
-        setTitleColor(color, forState: UIControlState.Normal)
-        
-        titleLabel?.font = UIFont.systemFontOfSize(fontSize)
+        frame = CGRect(x: 0, y: 0, width: 44.0, height: 44.0)
+        contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
+        setImage(UIImage(named: "icon_sort"), forState: UIControlState.Normal)
+        addTarget(sortTarget, action: action, forControlEvents: UIControlEvents.TouchUpInside)
     }
     
-    /// 便利构造函数
-    ///
-    /// - parameter title:     title
-    /// - parameter fontSize:  fontSize
-    /// - parameter color:     color
-    /// - parameter backColor: backColor 背景颜色
-    ///
-    /// - returns: UIButton
-    convenience init(title: String, fontSize: CGFloat, color: UIColor = UIColor.whiteColor(), backColor: UIColor = UIColor.darkGrayColor()) {
+    /// 导航栏返回按钮
+    convenience init(backTarget: AnyObject?, action: Selector) {
         self.init()
-        
-        setTitle(title, forState: UIControlState.Normal)
-        titleLabel?.font = UIFont.systemFontOfSize(fontSize)
-        
-        setTitleColor(color, forState: UIControlState.Normal)
-        backgroundColor = backColor
+        setImage(UIImage(named: "back"), forState: UIControlState.Normal)
+        frame = CGRect(x: 0, y: 0, width: 44.0, height: 44.0)
+        contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
+        addTarget(backTarget, action: action, forControlEvents: UIControlEvents.TouchUpInside)
     }
     
-    /// 便利构造函数
-    ///
-    /// - parameter imageName: imageName
-    ///
-    /// - returns: UIButton
-    convenience init(imageName: String) {
+    /// 导航栏取消按钮
+    convenience init(cancelTarget: AnyObject?, action: Selector) {
         self.init()
-        
-        setImage(UIImage(named: imageName), forState: UIControlState.Normal)
-        setImage(UIImage(named: imageName + "_highlighted"), forState: UIControlState.Highlighted)
-        
-        sizeToFit()
+        setTitle("取消", forState: UIControlState.Normal)
+        frame = CGRect(x: 0, y: 0, width: 44.0, height: 44.0)
+        contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
+        addTarget(cancelTarget, action: action, forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     
-    convenience init(title: String, backgroudImageName: String, color: UIColor, font: UIFont) {
-        self.init()
-        
-        setTitle(title, forState: UIControlState.Normal)
-        setBackgroundImage(UIImage(named: backgroudImageName), forState: UIControlState.Normal)
-        setTitleColor(color, forState: UIControlState.Normal)
-        
-        titleLabel?.font = font
-    }
     
-
-
-
+    
+    
 }
 

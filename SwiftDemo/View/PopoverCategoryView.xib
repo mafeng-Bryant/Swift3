@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PopoverCategoryView" customModule="SwiftDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="89"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3QX-XP-lkJ">
+                    <rect key="frame" x="0.0" y="0.0" width="311" height="89"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijF-49-LGk" userLabel="chose chanel">
+                    <rect key="frame" x="311" y="0.0" width="44" height="89"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="AF2-4o-Gno"/>
+                    </constraints>
+                    <state key="normal" image="giftcategorydetail_arrow_down_gray"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aud-JP-Drl">
+                    <rect key="frame" x="0.0" y="0.0" width="311" height="89"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="3QX-XP-lkJ" secondAttribute="bottom" id="0cd-Wf-b4W"/>
+                <constraint firstItem="ijF-49-LGk" firstAttribute="leading" secondItem="aud-JP-Drl" secondAttribute="trailing" id="6RG-Xs-fOE"/>
+                <constraint firstItem="3QX-XP-lkJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7ph-ob-nco"/>
+                <constraint firstItem="ijF-49-LGk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="P2c-Ca-een"/>
+                <constraint firstAttribute="bottom" secondItem="aud-JP-Drl" secondAttribute="bottom" id="agy-tg-EO3"/>
+                <constraint firstItem="aud-JP-Drl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dea-Dp-hmn"/>
+                <constraint firstAttribute="bottom" secondItem="ijF-49-LGk" secondAttribute="bottom" id="ggR-O0-YVK"/>
+                <constraint firstItem="ijF-49-LGk" firstAttribute="leading" secondItem="3QX-XP-lkJ" secondAttribute="trailing" id="jJq-Ob-I4p"/>
+                <constraint firstAttribute="trailing" secondItem="ijF-49-LGk" secondAttribute="trailing" id="sha-Py-0Cx"/>
+                <constraint firstItem="aud-JP-Drl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tUm-O4-N8I"/>
+                <constraint firstItem="3QX-XP-lkJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ucF-mF-N7N"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backView" destination="aud-JP-Drl" id="vp4-v6-hu9"/>
+                <outlet property="choseChannelBtn" destination="ijF-49-LGk" id="BDi-Ny-Xd0"/>
+                <outlet property="scrollView" destination="3QX-XP-lkJ" id="fQS-ku-mqY"/>
+            </connections>
+            <point key="canvasLocation" x="220.5" y="169.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="giftcategorydetail_arrow_down_gray" width="7" height="4"/>
+    </resources>
+</document>

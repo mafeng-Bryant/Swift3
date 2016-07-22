@@ -8,15 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		23005A932088ED5D974C696A /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36049F03E5FD7891DD995A53 /* Pods_SwiftDemo.framework */; };
+		E258AE2D1D41C802008349C2 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E258AE2C1D41C802008349C2 /* UIImage+Extension.swift */; };
 		E25AE2C01D3DD7AB00441EFA /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E25AE2BF1D3DD7AB00441EFA /* UIColor+Category.m */; };
 		E25AE2C21D3DDBB500441EFA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AE2C11D3DDBB500441EFA /* UIButton+Extension.swift */; };
+		E25AE2C51D3F278700441EFA /* PPBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AE2C41D3F278700441EFA /* PPBaseNavigationController.swift */; };
+		E25AE2CB1D3F28CD00441EFA /* TabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AE2CA1D3F28CD00441EFA /* TabBarExtension.swift */; };
+		E2E2F9CC1D41D3F800E94489 /* PPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9CB1D41D3F800E94489 /* PPBaseViewController.swift */; };
+		E2E2F9D61D41F20400E94489 /* PPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9D51D41F20400E94489 /* PPTabBarController.swift */; };
+		E2E2F9DA1D41F2A500E94489 /* HotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9D91D41F2A500E94489 /* HotViewController.swift */; };
+		E2E2F9DC1D41F2BA00E94489 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9DB1D41F2BA00E94489 /* MeViewController.swift */; };
+		E2E2F9DE1D41F2D400E94489 /* ClassfiyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9DD1D41F2D400E94489 /* ClassfiyViewController.swift */; };
+		E2E2F9E01D41F31000E94489 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9DF1D41F31000E94489 /* HomeViewController.swift */; };
+		E2E2F9E41D41F34E00E94489 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E2F9E21D41F34E00E94489 /* LoginViewController.storyboard */; };
+		E2E2F9E51D41F34E00E94489 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9E31D41F34E00E94489 /* LoginViewController.swift */; };
+		E2E2F9E81D41F3BF00E94489 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9E71D41F3BF00E94489 /* Common.swift */; };
+		E2E2F9EA1D41FD7400E94489 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9E91D41FD7400E94489 /* UIBarButtonItem+Extension.swift */; };
+		E2E2F9ED1D420D4F00E94489 /* PopoverCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9EC1D420D4F00E94489 /* PopoverCategoryView.swift */; };
+		E2E2F9EF1D420D6500E94489 /* PopoverCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E2F9EE1D420D6500E94489 /* PopoverCategoryView.xib */; };
 		E2FE6CF41D3DC846008D9BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE6CF31D3DC846008D9BED /* AppDelegate.swift */; };
-		E2FE6CF61D3DC846008D9BED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE6CF51D3DC846008D9BED /* ViewController.swift */; };
 		E2FE6CFB1D3DC846008D9BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FE6CFA1D3DC846008D9BED /* Assets.xcassets */; };
 		E2FE6D091D3DC846008D9BED /* SwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE6D081D3DC846008D9BED /* SwiftDemoTests.swift */; };
 		E2FE6D141D3DC846008D9BED /* SwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE6D131D3DC846008D9BED /* SwiftDemoUITests.swift */; };
-		E2FE6D221D3DCA8E008D9BED /* PPBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE6D211D3DCA8E008D9BED /* PPBaseNavigationController.swift */; };
 		E2FE6D241D3DCB5D008D9BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2FE6D231D3DCB5D008D9BED /* LaunchScreen.storyboard */; };
+		E2FF08311D3F763D00AB03BA /* NavgationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF08301D3F763D00AB03BA /* NavgationBarExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,13 +54,27 @@
 		36049F03E5FD7891DD995A53 /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		878742F0E20855AA46AC35FB /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		AD78ABDD21CEA39F76AC8F64 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E258AE2C1D41C802008349C2 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		E25AE2BD1D3DD7AB00441EFA /* SwiftDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		E25AE2BE1D3DD7AB00441EFA /* UIColor+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
 		E25AE2BF1D3DD7AB00441EFA /* UIColor+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Category.m"; sourceTree = "<group>"; };
 		E25AE2C11D3DDBB500441EFA /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		E25AE2C41D3F278700441EFA /* PPBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBaseNavigationController.swift; sourceTree = "<group>"; };
+		E25AE2CA1D3F28CD00441EFA /* TabBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarExtension.swift; sourceTree = "<group>"; };
+		E2E2F9CB1D41D3F800E94489 /* PPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBaseViewController.swift; sourceTree = "<group>"; };
+		E2E2F9D51D41F20400E94489 /* PPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPTabBarController.swift; path = ../controller/PPTabBarController.swift; sourceTree = "<group>"; };
+		E2E2F9D91D41F2A500E94489 /* HotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotViewController.swift; sourceTree = "<group>"; };
+		E2E2F9DB1D41F2BA00E94489 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		E2E2F9DD1D41F2D400E94489 /* ClassfiyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassfiyViewController.swift; sourceTree = "<group>"; };
+		E2E2F9DF1D41F31000E94489 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E2E2F9E21D41F34E00E94489 /* LoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		E2E2F9E31D41F34E00E94489 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E2E2F9E71D41F3BF00E94489 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		E2E2F9E91D41FD7400E94489 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		E2E2F9EC1D420D4F00E94489 /* PopoverCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverCategoryView.swift; sourceTree = "<group>"; };
+		E2E2F9EE1D420D6500E94489 /* PopoverCategoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverCategoryView.xib; sourceTree = "<group>"; };
 		E2FE6CF01D3DC846008D9BED /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FE6CF31D3DC846008D9BED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2FE6CF51D3DC846008D9BED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		E2FE6CFA1D3DC846008D9BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2FE6CFF1D3DC846008D9BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2FE6D041D3DC846008D9BED /* SwiftDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,8 +83,8 @@
 		E2FE6D0F1D3DC846008D9BED /* SwiftDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FE6D131D3DC846008D9BED /* SwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemoUITests.swift; sourceTree = "<group>"; };
 		E2FE6D151D3DC846008D9BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2FE6D211D3DCA8E008D9BED /* PPBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPBaseNavigationController.swift; path = ../PPBaseNavigationController.swift; sourceTree = "<group>"; };
 		E2FE6D231D3DCB5D008D9BED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E2FF08301D3F763D00AB03BA /* NavgationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavgationBarExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +141,75 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		E25AE2C31D3F277300441EFA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E258AE2C1D41C802008349C2 /* UIImage+Extension.swift */,
+				E25AE2CA1D3F28CD00441EFA /* TabBarExtension.swift */,
+				E2FF08301D3F763D00AB03BA /* NavgationBarExtension.swift */,
+				E2E2F9E91D41FD7400E94489 /* UIBarButtonItem+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E2E2F9C71D41D38B00E94489 /* Classfiy */ = {
+			isa = PBXGroup;
+			children = (
+				E2E2F9DD1D41F2D400E94489 /* ClassfiyViewController.swift */,
+			);
+			path = Classfiy;
+			sourceTree = "<group>";
+		};
+		E2E2F9C81D41D38B00E94489 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				E2E2F9DF1D41F31000E94489 /* HomeViewController.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		E2E2F9C91D41D38B00E94489 /* Hot */ = {
+			isa = PBXGroup;
+			children = (
+				E2E2F9D91D41F2A500E94489 /* HotViewController.swift */,
+			);
+			path = Hot;
+			sourceTree = "<group>";
+		};
+		E2E2F9CA1D41D38B00E94489 /* me */ = {
+			isa = PBXGroup;
+			children = (
+				E2E2F9DB1D41F2BA00E94489 /* MeViewController.swift */,
+			);
+			path = me;
+			sourceTree = "<group>";
+		};
+		E2E2F9E11D41F33000E94489 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E2E2F9E21D41F34E00E94489 /* LoginViewController.storyboard */,
+				E2E2F9E31D41F34E00E94489 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E2E2F9E61D41F3A700E94489 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E2E2F9E71D41F3BF00E94489 /* Common.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E2E2F9EB1D420C9F00E94489 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2E2F9EC1D420D4F00E94489 /* PopoverCategoryView.swift */,
+				E2E2F9EE1D420D6500E94489 /* PopoverCategoryView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E2FE6CE71D3DC846008D9BED = {
 			isa = PBXGroup;
 			children = (
@@ -138,9 +235,12 @@
 		E2FE6CF21D3DC846008D9BED /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E2E2F9EB1D420C9F00E94489 /* View */,
+				E2FE6D281D3DCDF4008D9BED /* module */,
+				E2E2F9E61D41F3A700E94489 /* Helper */,
+				E25AE2C31D3F277300441EFA /* Extension */,
 				E2FE6D271D3DCDEC008D9BED /* controller */,
 				E2FE6D261D3DCDE6008D9BED /* BaseNavController */,
-				E2FE6D281D3DCDF4008D9BED /* module */,
 				E2FE6CF31D3DC846008D9BED /* AppDelegate.swift */,
 				E2FE6D231D3DCB5D008D9BED /* LaunchScreen.storyboard */,
 				E2FE6CFA1D3DC846008D9BED /* Assets.xcassets */,
@@ -170,7 +270,9 @@
 		E2FE6D261D3DCDE6008D9BED /* BaseNavController */ = {
 			isa = PBXGroup;
 			children = (
-				E2FE6D211D3DCA8E008D9BED /* PPBaseNavigationController.swift */,
+				E2E2F9D51D41F20400E94489 /* PPTabBarController.swift */,
+				E25AE2C41D3F278700441EFA /* PPBaseNavigationController.swift */,
+				E2E2F9CB1D41D3F800E94489 /* PPBaseViewController.swift */,
 			);
 			path = BaseNavController;
 			sourceTree = "<group>";
@@ -178,7 +280,11 @@
 		E2FE6D271D3DCDEC008D9BED /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				E2FE6CF51D3DC846008D9BED /* ViewController.swift */,
+				E2E2F9E11D41F33000E94489 /* Login */,
+				E2E2F9C71D41D38B00E94489 /* Classfiy */,
+				E2E2F9C81D41D38B00E94489 /* home */,
+				E2E2F9C91D41D38B00E94489 /* Hot */,
+				E2E2F9CA1D41D38B00E94489 /* me */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -298,6 +404,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E2F9EF1D420D6500E94489 /* PopoverCategoryView.xib in Resources */,
+				E2E2F9E41D41F34E00E94489 /* LoginViewController.storyboard in Resources */,
 				E2FE6D241D3DCB5D008D9BED /* LaunchScreen.storyboard in Resources */,
 				E2FE6CFB1D3DC846008D9BED /* Assets.xcassets in Resources */,
 			);
@@ -372,11 +480,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2FE6D221D3DCA8E008D9BED /* PPBaseNavigationController.swift in Sources */,
-				E2FE6CF61D3DC846008D9BED /* ViewController.swift in Sources */,
+				E2E2F9EA1D41FD7400E94489 /* UIBarButtonItem+Extension.swift in Sources */,
+				E2E2F9DC1D41F2BA00E94489 /* MeViewController.swift in Sources */,
+				E2E2F9CC1D41D3F800E94489 /* PPBaseViewController.swift in Sources */,
+				E2E2F9DE1D41F2D400E94489 /* ClassfiyViewController.swift in Sources */,
+				E2FF08311D3F763D00AB03BA /* NavgationBarExtension.swift in Sources */,
+				E2E2F9DA1D41F2A500E94489 /* HotViewController.swift in Sources */,
+				E258AE2D1D41C802008349C2 /* UIImage+Extension.swift in Sources */,
+				E25AE2C51D3F278700441EFA /* PPBaseNavigationController.swift in Sources */,
 				E2FE6CF41D3DC846008D9BED /* AppDelegate.swift in Sources */,
+				E25AE2CB1D3F28CD00441EFA /* TabBarExtension.swift in Sources */,
+				E2E2F9E01D41F31000E94489 /* HomeViewController.swift in Sources */,
+				E2E2F9E51D41F34E00E94489 /* LoginViewController.swift in Sources */,
 				E25AE2C01D3DD7AB00441EFA /* UIColor+Category.m in Sources */,
+				E2E2F9ED1D420D4F00E94489 /* PopoverCategoryView.swift in Sources */,
 				E25AE2C21D3DDBB500441EFA /* UIButton+Extension.swift in Sources */,
+				E2E2F9E81D41F3BF00E94489 /* Common.swift in Sources */,
+				E2E2F9D61D41F20400E94489 /* PPTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

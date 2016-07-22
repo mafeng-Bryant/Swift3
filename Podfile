@@ -7,9 +7,9 @@ inhibit_all_warnings!
 
 target ’SwiftDemo’ do
   
-pod 'Alamofire', '~> 3.1.0'
-pod 'SwiftyJSON', '~> 2.3.1'
-pod 'SDWebImage', '~>3.7'
-
+pod 'SnapKit', '~> 0.15.0'
+pod "MJRefresh"
+#pod 'SDWebImage', '~> 3.7.3'
+pod 'SVProgressHUD', '~> 1.1.3'
 
 end
