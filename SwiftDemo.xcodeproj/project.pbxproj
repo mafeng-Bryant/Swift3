@@ -13,6 +13,9 @@
 		E25AE2C21D3DDBB500441EFA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AE2C11D3DDBB500441EFA /* UIButton+Extension.swift */; };
 		E25AE2C51D3F278700441EFA /* PPBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AE2C41D3F278700441EFA /* PPBaseNavigationController.swift */; };
 		E25AE2CB1D3F28CD00441EFA /* TabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AE2CA1D3F28CD00441EFA /* TabBarExtension.swift */; };
+		E27163021D47A0230047F042 /* PPBaseStrategyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27163011D47A0230047F042 /* PPBaseStrategyFeedViewController.swift */; };
+		E27163041D47A05F0047F042 /* PPChoiceStrategyFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27163031D47A05F0047F042 /* PPChoiceStrategyFeedController.swift */; };
+		E27163061D47A0A00047F042 /* PPCommonStrategyFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27163051D47A0A00047F042 /* PPCommonStrategyFeedController.swift */; };
 		E2E2F9CC1D41D3F800E94489 /* PPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9CB1D41D3F800E94489 /* PPBaseViewController.swift */; };
 		E2E2F9D61D41F20400E94489 /* PPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9D51D41F20400E94489 /* PPTabBarController.swift */; };
 		E2E2F9DA1D41F2A500E94489 /* HotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9D91D41F2A500E94489 /* HotViewController.swift */; };
@@ -61,6 +64,9 @@
 		E25AE2C11D3DDBB500441EFA /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		E25AE2C41D3F278700441EFA /* PPBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBaseNavigationController.swift; sourceTree = "<group>"; };
 		E25AE2CA1D3F28CD00441EFA /* TabBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarExtension.swift; sourceTree = "<group>"; };
+		E27163011D47A0230047F042 /* PPBaseStrategyFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBaseStrategyFeedViewController.swift; sourceTree = "<group>"; };
+		E27163031D47A05F0047F042 /* PPChoiceStrategyFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPChoiceStrategyFeedController.swift; sourceTree = "<group>"; };
+		E27163051D47A0A00047F042 /* PPCommonStrategyFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPCommonStrategyFeedController.swift; sourceTree = "<group>"; };
 		E2E2F9CB1D41D3F800E94489 /* PPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBaseViewController.swift; sourceTree = "<group>"; };
 		E2E2F9D51D41F20400E94489 /* PPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPTabBarController.swift; path = ../controller/PPTabBarController.swift; sourceTree = "<group>"; };
 		E2E2F9D91D41F2A500E94489 /* HotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +170,9 @@
 			isa = PBXGroup;
 			children = (
 				E2E2F9DF1D41F31000E94489 /* HomeViewController.swift */,
+				E27163011D47A0230047F042 /* PPBaseStrategyFeedViewController.swift */,
+				E27163031D47A05F0047F042 /* PPChoiceStrategyFeedController.swift */,
+				E27163051D47A0A00047F042 /* PPCommonStrategyFeedController.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -483,7 +492,9 @@
 				E2E2F9EA1D41FD7400E94489 /* UIBarButtonItem+Extension.swift in Sources */,
 				E2E2F9DC1D41F2BA00E94489 /* MeViewController.swift in Sources */,
 				E2E2F9CC1D41D3F800E94489 /* PPBaseViewController.swift in Sources */,
+				E27163041D47A05F0047F042 /* PPChoiceStrategyFeedController.swift in Sources */,
 				E2E2F9DE1D41F2D400E94489 /* ClassfiyViewController.swift in Sources */,
+				E27163021D47A0230047F042 /* PPBaseStrategyFeedViewController.swift in Sources */,
 				E2FF08311D3F763D00AB03BA /* NavgationBarExtension.swift in Sources */,
 				E2E2F9DA1D41F2A500E94489 /* HotViewController.swift in Sources */,
 				E258AE2D1D41C802008349C2 /* UIImage+Extension.swift in Sources */,
@@ -497,6 +508,7 @@
 				E25AE2C21D3DDBB500441EFA /* UIButton+Extension.swift in Sources */,
 				E2E2F9E81D41F3BF00E94489 /* Common.swift in Sources */,
 				E2E2F9D61D41F20400E94489 /* PPTabBarController.swift in Sources */,
+				E27163061D47A0A00047F042 /* PPCommonStrategyFeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
