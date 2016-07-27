@@ -8,28 +8,65 @@
 
 import UIKit
 
+private let cellIdentify = "BaseStrategyCell"
+
 class PPBaseStrategyFeedViewController: PPBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        setupUI()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setupFrame()
+     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func setupUI(){
+    view.addSubview(tableView)
     }
-    */
+    
+    private func setupFrame(){
+    tableView.frame = view.bounds
+    }
+    
+    //MARK lazy tableView
+    lazy var tableView:UITableView =  {
+       let tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = Color_GlobalBackground
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.sectionFooterHeight = 0.0001
+        tableView.sectionHeaderHeight = 0.0001
+        tableView.registerNib(UINib(nibName: "BaseStrategyCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: cellIdentify)
+        return tableView
+    }()
 
 }
+
+extension PPBaseStrategyFeedViewController:UITableViewDelegate,UITableViewDataSource {
+
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 15
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentify)
+        return cell!
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 260
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+   //     navigationController?.pushViewController(CommonFetureViewController(), animated: true)
+    }
+}
+
+
+

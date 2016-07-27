@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		23005A932088ED5D974C696A /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36049F03E5FD7891DD995A53 /* Pods_SwiftDemo.framework */; };
+		E23299D11D48BF0600872492 /* PPBannerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23299D01D48BF0600872492 /* PPBannerCollectionView.swift */; };
+		E23299D31D48C0DA00872492 /* PPTopCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23299D21D48C0DA00872492 /* PPTopCollectionView.swift */; };
 		E258AE2D1D41C802008349C2 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E258AE2C1D41C802008349C2 /* UIImage+Extension.swift */; };
 		E25AE2C01D3DD7AB00441EFA /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E25AE2BF1D3DD7AB00441EFA /* UIColor+Category.m */; };
 		E25AE2C21D3DDBB500441EFA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AE2C11D3DDBB500441EFA /* UIButton+Extension.swift */; };
@@ -58,6 +60,8 @@
 		36049F03E5FD7891DD995A53 /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		878742F0E20855AA46AC35FB /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		AD78ABDD21CEA39F76AC8F64 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E23299D01D48BF0600872492 /* PPBannerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBannerCollectionView.swift; sourceTree = "<group>"; };
+		E23299D21D48C0DA00872492 /* PPTopCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTopCollectionView.swift; sourceTree = "<group>"; };
 		E258AE2C1D41C802008349C2 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		E25AE2BD1D3DD7AB00441EFA /* SwiftDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		E25AE2BE1D3DD7AB00441EFA /* UIColor+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				E2E2F9EC1D420D4F00E94489 /* PopoverCategoryView.swift */,
 				E2E2F9EE1D420D6500E94489 /* PopoverCategoryView.xib */,
 				E2A3A96F1D4862930009B8D9 /* MaskCoverView.swift */,
+				E23299D01D48BF0600872492 /* PPBannerCollectionView.swift */,
+				E23299D21D48C0DA00872492 /* PPTopCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -494,10 +500,12 @@
 			files = (
 				E2E2F9EA1D41FD7400E94489 /* UIBarButtonItem+Extension.swift in Sources */,
 				E2E2F9DC1D41F2BA00E94489 /* MeViewController.swift in Sources */,
+				E23299D11D48BF0600872492 /* PPBannerCollectionView.swift in Sources */,
 				E2E2F9CC1D41D3F800E94489 /* PPBaseViewController.swift in Sources */,
 				E27163041D47A05F0047F042 /* PPChoiceStrategyFeedController.swift in Sources */,
 				E2E2F9DE1D41F2D400E94489 /* ClassfiyViewController.swift in Sources */,
 				E27163021D47A0230047F042 /* PPBaseStrategyFeedViewController.swift in Sources */,
+				E23299D31D48C0DA00872492 /* PPTopCollectionView.swift in Sources */,
 				E2FF08311D3F763D00AB03BA /* NavgationBarExtension.swift in Sources */,
 				E2E2F9DA1D41F2A500E94489 /* HotViewController.swift in Sources */,
 				E258AE2D1D41C802008349C2 /* UIImage+Extension.swift in Sources */,

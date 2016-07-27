@@ -74,7 +74,7 @@ class PopoverCategoryView: UIView {
             let y = btnHeight * CGFloat(row)
             let btn = createBtn(title);
             btn.tag = i
-            btn.frame = CGRectMake(x, y, btnWidth, bnHeight)
+            btn.frame = CGRectMake(x, y, btnWidth, btnHeight)
             btn.addTarget(self, action: #selector(PopoverCategoryView.squareCategoryBtnAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
            popoverView.addSubview(btn)
            cacheSquareCategoryBtns.append(btn)
@@ -233,7 +233,6 @@ class PopoverCategoryView: UIView {
         view.backgroundColor = UIColor(red: 251.0/255.0, green: 45.0/255.0, blue: 71.0/255.0, alpha: 1.0)
         return view
     }()
-    
     
     private lazy var maskCoverView: MaskCoverView = MaskCoverView()
     

@@ -36,8 +36,17 @@ class HomeViewController: PPBaseViewController {
         navigationItem.titleView = titleImageView
         view.addSubview(scrollView)
         view.addSubview(popoverCategoryView)
-
-        
+        for i in 0..<categotyTitles.count {
+            let categoryVC = i == 0 ? PPChoiceStrategyFeedController() : PPCommonStrategyFeedController()
+            if i % 2 == 0 {
+                categoryVC.view.backgroundColor = UIColor.redColor()
+            }else {
+                categoryVC.view.backgroundColor = UIColor.greenColor()
+            }
+            self.addChildViewController(categoryVC)
+            scrollView.addSubview(categoryVC.view)
+            cacheCategoryViews.append(categoryVC.view)
+        }
     }
     
     private lazy var titleImageView:UIImageView = {
@@ -64,18 +73,17 @@ class HomeViewController: PPBaseViewController {
     }()
     
     private func setUpUIFrame(){
-        
-     popoverCategoryView.frame  = CGRectMake(0, 0, view.bounds.width, 44)
+      popoverCategoryView.frame  = CGRectMake(0, 0, view.bounds.width, 44)
      scrollView.frame = CGRectMake(0, CGRectGetMaxY(popoverCategoryView.frame), view.frame.size.width, view.bounds.height - 44 - popoverCategoryView.bounds.height)
+        for i in 0..<cacheCategoryViews.count {
+            let view = cacheCategoryViews[i];
+            view.frame = CGRectMake(scrollView.frame.width * CGFloat(i), 0, scrollView.frame.width, scrollView.frame.height);
+       }
       scrollView.contentSize = CGSizeMake(CGFloat(categotyTitles.count) * scrollView.frame.size.width, 0)
-      print("scrollView = %@",scrollView)
    }
-    
     
     @objc private func giftAction(){
      
-        
-        
     }
     
     @objc private func searchBarAction(){
@@ -93,7 +101,7 @@ class HomeViewController: PPBaseViewController {
 extension HomeViewController: PopoverCategoryViewDelegate
 {
     func clickChanelIndex(index: NSInteger){
-     print("index %ld click",index)
+    scrollView.setContentOffset(CGPointMake(CGFloat(index) * scrollView.bounds.width, 0), animated: true)
     }
 }
 
