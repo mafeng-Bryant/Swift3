@@ -234,6 +234,7 @@ class PopoverCategoryView: UIView {
         return view
     }()
     
+    
     private lazy var maskCoverView: MaskCoverView = MaskCoverView()
     
     private var squareBottomLineView:UIView = {
