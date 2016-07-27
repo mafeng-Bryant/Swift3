@@ -108,6 +108,11 @@ class PopoverCategoryView: UIView {
         return view
     }
     
+    func scrollCategoryBtnByIndex(index: NSInteger){
+      scrollCategoryAction(cacheScrollCategoryBtns[index])
+    }
+    
+    
     
     private func showPopoverView(){
     backgroundColor = backView.backgroundColor

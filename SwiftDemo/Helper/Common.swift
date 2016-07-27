@@ -19,3 +19,10 @@ let Color_NavBackground = UIColor(red: 251.0/255.0, green: 45.0/255.0, blue: 71.
 
 let ScreenWidth = UIScreen.mainScreen().bounds.width
 let ScreenHeight = UIScreen.mainScreen().bounds.height
+
+//方向
+enum TableViewScrollingToDicrection :Int{
+    case TableViewScrollingToUp = 0
+    case TableViewScrollingToDown = 1
+}
+

@@ -38,11 +38,7 @@ class HomeViewController: PPBaseViewController {
         view.addSubview(popoverCategoryView)
         for i in 0..<categotyTitles.count {
             let categoryVC = i == 0 ? PPChoiceStrategyFeedController() : PPCommonStrategyFeedController()
-            if i % 2 == 0 {
-                categoryVC.view.backgroundColor = UIColor.redColor()
-            }else {
-                categoryVC.view.backgroundColor = UIColor.greenColor()
-            }
+            categoryVC.delegate = self
             self.addChildViewController(categoryVC)
             scrollView.addSubview(categoryVC.view)
             cacheCategoryViews.append(categoryVC.view)
@@ -74,7 +70,7 @@ class HomeViewController: PPBaseViewController {
     
     private func setUpUIFrame(){
       popoverCategoryView.frame  = CGRectMake(0, 0, view.bounds.width, 44)
-     scrollView.frame = CGRectMake(0, CGRectGetMaxY(popoverCategoryView.frame), view.frame.size.width, view.bounds.height - 44 - popoverCategoryView.bounds.height)
+      scrollView.frame = CGRectMake(0, CGRectGetMaxY(popoverCategoryView.frame), view.frame.size.width, view.bounds.height - 44 - popoverCategoryView.bounds.height)
         for i in 0..<cacheCategoryViews.count {
             let view = cacheCategoryViews[i];
             view.frame = CGRectMake(scrollView.frame.width * CGFloat(i), 0, scrollView.frame.width, scrollView.frame.height);
@@ -97,23 +93,36 @@ class HomeViewController: PPBaseViewController {
     }
 }
 
+extension HomeViewController: PPBaseStrategyFeedViewControllerDelegate
+{
+    func clickChanelIndex(dicrection: TableViewScrollingToDicrection) {
+        if dicrection == TableViewScrollingToDicrection.TableViewScrollingToDown {
+           UIView.animateWithDuration(0.08, animations: {
+                self.popoverCategoryView.frame.origin.y = 0
+                self.scrollView.frame.origin.y = max(0,CGRectGetMaxY(self.popoverCategoryView.frame))
+                self.scrollView.frame.size.height = self.view.bounds.height - self.scrollView.frame.origin.y
+            })
+          }else if dicrection == TableViewScrollingToDicrection.TableViewScrollingToUp{
+            UIView.animateWithDuration(0.08, animations: {
+                self.popoverCategoryView.frame.origin.y = -self.popoverCategoryView.bounds.height
+                self.scrollView.frame.origin.y = max(0,CGRectGetMaxY(self.popoverCategoryView.frame))
+                self.scrollView.frame.size.height = self.view.bounds.height - self.scrollView.frame.origin.y
+            })
+        }
+    }
+}
 
 extension HomeViewController: PopoverCategoryViewDelegate
 {
     func clickChanelIndex(index: NSInteger){
-    scrollView.setContentOffset(CGPointMake(CGFloat(index) * scrollView.bounds.width, 0), animated: true)
+     scrollView.setContentOffset(CGPointMake(CGFloat(index) * scrollView.bounds.width, 0), animated: true)
     }
 }
-
 
 extension HomeViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
        let index =  scrollView.contentOffset.x / scrollView.frame.size.width
-       print("index = %ld",index)
+       popoverCategoryView.scrollCategoryBtnByIndex(NSInteger(index))
     }
 }
-
-
-
-
 

@@ -27,9 +27,10 @@ class PPChoiceStrategyFeedController: PPBaseStrategyFeedViewController {
     }
     
     private func setupFrame(){
-    //
-        
-        
+        banner.frame = CGRect(x: 0,y: 0,width: self.tableView.bounds.width, height:170)
+        top.frame = CGRect(x: 0,y: banner.bounds.height,width: self.tableView.bounds.width,height: 120)
+        headerView.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: banner.bounds.height + top.bounds.height + 10.0)
+        tableView.tableHeaderView = headerView
     }
     
     // MARK: -懒加载

@@ -10,7 +10,15 @@ import UIKit
 
 private let cellIdentify = "BaseStrategyCell"
 
+protocol PPBaseStrategyFeedViewControllerDelegate:NSObjectProtocol {
+    func clickChanelIndex(dicrection: TableViewScrollingToDicrection)
+}
+
 class PPBaseStrategyFeedViewController: PPBaseViewController {
+
+    var lastContentOffsetY:CGFloat = 0.0
+    
+    weak var delegate :PPBaseStrategyFeedViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +57,6 @@ class PPBaseStrategyFeedViewController: PPBaseViewController {
 
 extension PPBaseStrategyFeedViewController:UITableViewDelegate,UITableViewDataSource {
 
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 15
     }
@@ -64,7 +71,23 @@ extension PPBaseStrategyFeedViewController:UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-   //     navigationController?.pushViewController(CommonFetureViewController(), animated: true)
+    }
+    
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        lastContentOffsetY = scrollView.contentOffset.y
+    }
+    
+    func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
+        if lastContentOffsetY < scrollView.contentOffset.y {
+           if let callback = delegate {
+              callback.clickChanelIndex(TableViewScrollingToDicrection.TableViewScrollingToUp)
+            }
+        }else {
+            if let callback = delegate {
+                callback.clickChanelIndex(TableViewScrollingToDicrection.TableViewScrollingToDown)
+            }
+        }
     }
 }
 
