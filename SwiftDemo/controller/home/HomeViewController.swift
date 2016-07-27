@@ -10,10 +10,12 @@ import UIKit
 
 class HomeViewController: PPBaseViewController {
 
-    var categotyTitles : [String] {
-        return ["AAA","BBB","CCCDDD","AAA","BBB","CCCDDD","AAA","BBB","CCCDDD","AAA","BBB","CCCDDD"]
+    
+    var categotyTitles: [NSString]
+    {
+        return ["精选", "海淘", "创意生活", "送女票", "科技范", "送爸妈", "送基友", "送闺蜜", "送同事", "送宝贝", "设计感", "文艺范", "奇葩搞怪", "萌萌哒"]
     }
-
+    
     //scrollview的分类视图
     var cacheCategoryViews = [UIView]();
 
@@ -28,20 +30,13 @@ class HomeViewController: PPBaseViewController {
     }
     
     private  func setUpUI(){
-       view.backgroundColor = Color_GlobalBackground
+        view.backgroundColor = Color_GlobalBackground
         navigationItem.leftBarButtonItem = UIBarButtonItem(gitTarget: self,action: #selector(HomeViewController.giftAction))
         navigationItem.rightBarButtonItem = UIBarButtonItem(searchTarget: self,action:  #selector(HomeViewController.searchBarAction))
         navigationItem.titleView = titleImageView
         view.addSubview(scrollView)
         view.addSubview(popoverCategoryView)
-       
-        for i in 0..<categotyTitles.count {
-           
-            
-            
-        
-        }
-        
+
         
     }
     
@@ -69,11 +64,10 @@ class HomeViewController: PPBaseViewController {
     }()
     
     private func setUpUIFrame(){
+        
      popoverCategoryView.frame  = CGRectMake(0, 0, view.bounds.width, 44)
      scrollView.frame = CGRectMake(0, CGRectGetMaxY(popoverCategoryView.frame), view.frame.size.width, view.bounds.height - 44 - popoverCategoryView.bounds.height)
-        
-        
-     scrollView.contentSize = CGSizeMake(CGFloat(categotyTitles.count) * scrollView.frame.size.width, 0)
+      scrollView.contentSize = CGSizeMake(CGFloat(categotyTitles.count) * scrollView.frame.size.width, 0)
       print("scrollView = %@",scrollView)
    }
     
