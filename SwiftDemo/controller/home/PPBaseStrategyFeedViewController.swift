@@ -61,10 +61,12 @@ extension PPBaseStrategyFeedViewController:UITableViewDelegate,UITableViewDataSo
         return 15
     }
     
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentify)
         return cell!
     }
+    
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 260
