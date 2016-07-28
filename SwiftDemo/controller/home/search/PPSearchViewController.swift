@@ -31,10 +31,37 @@ class PPSearchViewController: PPBaseViewController {
     }
    
     private func setupUI(){
-    
-        
-    
+        view.backgroundColor = Color_GlobalBackground
+        navigationItem.titleView = searchBar
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIView())
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
+       //tableView
+       tableView = UITableView(frame: view.bounds, style: UITableViewStyle.Plain)
+       view.addSubview(tableView!)
+       tableView?.delegate = self
+       tableView?.dataSource = self
+       tableView?.sectionHeaderHeight = 0.01
+       tableView?.sectionFooterHeight = 0.01
+       tableView?.separatorStyle = UITableViewCellSeparatorStyle.None
+       tableView?.backgroundColor = Color_GlobalBackground
+       tableView?.tableHeaderView = SearchHeaderView()
+       tableView?.registerNib(UINib(nibName: "searchGiftCell",bundle: NSBundle.mainBundle() ), forCellReuseIdentifier: searchCellIdentifier)
+       view.addSubview(sortView)
     }
+    
+    private lazy var sortView: UIView = {
+    
+    
+    
+     return UIView()
+    
+    }()
+    
+    private lazy var searchHeadView: SearchHeaderView = {
+     let searchView = SearchHeaderView()
+        
+      return searchView
+    }()
     
     private lazy var searchBar:UISearchBar = UISearchBar(searchGifdelegate: self, backgroundColor: UIColor.whiteColor(), backgroundImage: UINavigationBar.appearance().backgroundImageForBarMetrics(UIBarMetrics.Default)!)
     
@@ -70,6 +97,32 @@ class PPSearchViewController: PPBaseViewController {
     
 }
 
+extension PPSearchViewController: UITableViewDelegate,UITableViewDataSource {
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(searchCellIdentifier)
+        cell!.selectionStyle = UITableViewCellSelectionStyle.None
+        return cell!
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 44.0
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+      //  searchBarResignFirstResponder()
+     //   navigationController?.pushViewController(SearchGifViewController(), animated: true)
+    }
+
+}
 
 extension PPSearchViewController:UISearchBarDelegate {
 

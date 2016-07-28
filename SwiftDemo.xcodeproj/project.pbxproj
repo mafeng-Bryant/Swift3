@@ -52,6 +52,8 @@
 		E28FF4881D49AB4700C3D119 /* PPSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28FF4871D49AB4700C3D119 /* PPSearchViewController.swift */; };
 		E28FF48A1D49B54B00C3D119 /* UISearchBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28FF4891D49B54B00C3D119 /* UISearchBar+Extension.swift */; };
 		E2A3A9701D4862930009B8D9 /* MaskCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A3A96F1D4862930009B8D9 /* MaskCoverView.swift */; };
+		E2CA03F21D49BA9C00D3EFCA /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA03F11D49BA9C00D3EFCA /* SearchHeaderView.swift */; };
+		E2CA03F41D49BC9C00D3EFCA /* SearchGiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2CA03F31D49BC9C00D3EFCA /* SearchGiftCell.xib */; };
 		E2E2F9CC1D41D3F800E94489 /* PPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9CB1D41D3F800E94489 /* PPBaseViewController.swift */; };
 		E2E2F9D61D41F20400E94489 /* PPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9D51D41F20400E94489 /* PPTabBarController.swift */; };
 		E2E2F9DA1D41F2A500E94489 /* HotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9D91D41F2A500E94489 /* HotViewController.swift */; };
@@ -139,6 +141,8 @@
 		E28FF4871D49AB4700C3D119 /* PPSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPSearchViewController.swift; sourceTree = "<group>"; };
 		E28FF4891D49B54B00C3D119 /* UISearchBar+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extension.swift"; sourceTree = "<group>"; };
 		E2A3A96F1D4862930009B8D9 /* MaskCoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskCoverView.swift; sourceTree = "<group>"; };
+		E2CA03F11D49BA9C00D3EFCA /* SearchHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
+		E2CA03F31D49BC9C00D3EFCA /* SearchGiftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchGiftCell.xib; sourceTree = "<group>"; };
 		E2E2F9CB1D41D3F800E94489 /* PPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBaseViewController.swift; sourceTree = "<group>"; };
 		E2E2F9D51D41F20400E94489 /* PPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPTabBarController.swift; path = ../controller/PPTabBarController.swift; sourceTree = "<group>"; };
 		E2E2F9D91D41F2A500E94489 /* HotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotViewController.swift; sourceTree = "<group>"; };
@@ -354,6 +358,8 @@
 				E23299D01D48BF0600872492 /* PPBannerCollectionView.swift */,
 				E23299D21D48C0DA00872492 /* PPTopCollectionView.swift */,
 				E23299DB1D48DB6400872492 /* TopicCell.xib */,
+				E2CA03F11D49BA9C00D3EFCA /* SearchHeaderView.swift */,
+				E2CA03F31D49BC9C00D3EFCA /* SearchGiftCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -561,6 +567,7 @@
 				E23299D91D48D82E00872492 /* BannerCell.xib in Resources */,
 				E2329A141D48DE1500872492 /* strategy_7.jpg in Resources */,
 				E2E2F9E41D41F34E00E94489 /* LoginViewController.storyboard in Resources */,
+				E2CA03F41D49BC9C00D3EFCA /* SearchGiftCell.xib in Resources */,
 				E2329A011D48DE1500872492 /* goods_5.jpg in Resources */,
 				E2329A021D48DE1500872492 /* goods_6.jpg in Resources */,
 				E2329A151D48DE1500872492 /* strategy_8.jpg in Resources */,
@@ -685,6 +692,7 @@
 				E2A3A9701D4862930009B8D9 /* MaskCoverView.swift in Sources */,
 				E2E2F9D61D41F20400E94489 /* PPTabBarController.swift in Sources */,
 				E27163061D47A0A00047F042 /* PPCommonStrategyFeedController.swift in Sources */,
+				E2CA03F21D49BA9C00D3EFCA /* SearchHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
