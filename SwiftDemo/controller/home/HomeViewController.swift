@@ -33,7 +33,7 @@ class HomeViewController: PPBaseViewController {
         view.backgroundColor = Color_GlobalBackground
         navigationItem.leftBarButtonItem = UIBarButtonItem(gitTarget: self,action: #selector(HomeViewController.giftAction))
         navigationItem.rightBarButtonItem = UIBarButtonItem(searchTarget: self,action:  #selector(HomeViewController.searchBarAction))
-        navigationItem.titleView = titleImageView
+        self.title = "SwiftDemo"
         view.addSubview(scrollView)
         view.addSubview(popoverCategoryView)
         for i in 0..<categotyTitles.count {
@@ -83,8 +83,7 @@ class HomeViewController: PPBaseViewController {
     }
     
     @objc private func searchBarAction(){
-    
-    
+     navigationController?.pushViewController(PPSearchViewController(), animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -100,13 +99,13 @@ extension HomeViewController: PPBaseStrategyFeedViewControllerDelegate
            UIView.animateWithDuration(0.08, animations: {
                 self.popoverCategoryView.frame.origin.y = 0
                 self.scrollView.frame.origin.y = max(0,CGRectGetMaxY(self.popoverCategoryView.frame))
-                self.scrollView.frame.size.height = self.view.bounds.height - self.scrollView.frame.origin.y
+                self.scrollView.frame.size.height = self.view.bounds.height - self.scrollView.frame.origin.y - 44
             })
           }else if dicrection == TableViewScrollingToDicrection.TableViewScrollingToUp{
             UIView.animateWithDuration(0.08, animations: {
                 self.popoverCategoryView.frame.origin.y = -self.popoverCategoryView.bounds.height
                 self.scrollView.frame.origin.y = max(0,CGRectGetMaxY(self.popoverCategoryView.frame))
-                self.scrollView.frame.size.height = self.view.bounds.height - self.scrollView.frame.origin.y
+                self.scrollView.frame.size.height = self.view.bounds.height - self.scrollView.frame.origin.y - 44
             })
         }
     }

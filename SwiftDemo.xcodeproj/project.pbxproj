@@ -49,6 +49,8 @@
 		E27163021D47A0230047F042 /* PPBaseStrategyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27163011D47A0230047F042 /* PPBaseStrategyFeedViewController.swift */; };
 		E27163041D47A05F0047F042 /* PPChoiceStrategyFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27163031D47A05F0047F042 /* PPChoiceStrategyFeedController.swift */; };
 		E27163061D47A0A00047F042 /* PPCommonStrategyFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27163051D47A0A00047F042 /* PPCommonStrategyFeedController.swift */; };
+		E28FF4881D49AB4700C3D119 /* PPSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28FF4871D49AB4700C3D119 /* PPSearchViewController.swift */; };
+		E28FF48A1D49B54B00C3D119 /* UISearchBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28FF4891D49B54B00C3D119 /* UISearchBar+Extension.swift */; };
 		E2A3A9701D4862930009B8D9 /* MaskCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A3A96F1D4862930009B8D9 /* MaskCoverView.swift */; };
 		E2E2F9CC1D41D3F800E94489 /* PPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9CB1D41D3F800E94489 /* PPBaseViewController.swift */; };
 		E2E2F9D61D41F20400E94489 /* PPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9D51D41F20400E94489 /* PPTabBarController.swift */; };
@@ -134,6 +136,8 @@
 		E27163011D47A0230047F042 /* PPBaseStrategyFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBaseStrategyFeedViewController.swift; sourceTree = "<group>"; };
 		E27163031D47A05F0047F042 /* PPChoiceStrategyFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPChoiceStrategyFeedController.swift; sourceTree = "<group>"; };
 		E27163051D47A0A00047F042 /* PPCommonStrategyFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPCommonStrategyFeedController.swift; sourceTree = "<group>"; };
+		E28FF4871D49AB4700C3D119 /* PPSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPSearchViewController.swift; sourceTree = "<group>"; };
+		E28FF4891D49B54B00C3D119 /* UISearchBar+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extension.swift"; sourceTree = "<group>"; };
 		E2A3A96F1D4862930009B8D9 /* MaskCoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskCoverView.swift; sourceTree = "<group>"; };
 		E2E2F9CB1D41D3F800E94489 /* PPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBaseViewController.swift; sourceTree = "<group>"; };
 		E2E2F9D51D41F20400E94489 /* PPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPTabBarController.swift; path = ../controller/PPTabBarController.swift; sourceTree = "<group>"; };
@@ -272,8 +276,17 @@
 				E25AE2CA1D3F28CD00441EFA /* TabBarExtension.swift */,
 				E2FF08301D3F763D00AB03BA /* NavgationBarExtension.swift */,
 				E2E2F9E91D41FD7400E94489 /* UIBarButtonItem+Extension.swift */,
+				E28FF4891D49B54B00C3D119 /* UISearchBar+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		E28FF4861D49AAF300C3D119 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				E28FF4871D49AB4700C3D119 /* PPSearchViewController.swift */,
+			);
+			path = search;
 			sourceTree = "<group>";
 		};
 		E2E2F9C71D41D38B00E94489 /* Classfiy */ = {
@@ -287,6 +300,7 @@
 		E2E2F9C81D41D38B00E94489 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				E28FF4861D49AAF300C3D119 /* search */,
 				E2E2F9DF1D41F31000E94489 /* HomeViewController.swift */,
 				E27163011D47A0230047F042 /* PPBaseStrategyFeedViewController.swift */,
 				E27163031D47A05F0047F042 /* PPChoiceStrategyFeedController.swift */,
@@ -662,9 +676,11 @@
 				E25AE2CB1D3F28CD00441EFA /* TabBarExtension.swift in Sources */,
 				E2E2F9E01D41F31000E94489 /* HomeViewController.swift in Sources */,
 				E2E2F9E51D41F34E00E94489 /* LoginViewController.swift in Sources */,
+				E28FF4881D49AB4700C3D119 /* PPSearchViewController.swift in Sources */,
 				E25AE2C01D3DD7AB00441EFA /* UIColor+Category.m in Sources */,
 				E2E2F9ED1D420D4F00E94489 /* PopoverCategoryView.swift in Sources */,
 				E25AE2C21D3DDBB500441EFA /* UIButton+Extension.swift in Sources */,
+				E28FF48A1D49B54B00C3D119 /* UISearchBar+Extension.swift in Sources */,
 				E2E2F9E81D41F3BF00E94489 /* Common.swift in Sources */,
 				E2A3A9701D4862930009B8D9 /* MaskCoverView.swift in Sources */,
 				E2E2F9D61D41F20400E94489 /* PPTabBarController.swift in Sources */,
