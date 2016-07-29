@@ -79,7 +79,6 @@
             </variation>
             <connections>
                 <outlet property="marginToView" destination="dpl-nw-fSN" id="ZzF-jB-Cku"/>
-                <outlet property="marginTopView" destination="dpl-nw-fSN" id="qA0-bO-z4y"/>
                 <outlet property="viewAllBtn" destination="lHc-1c-Hiz" id="JPd-OU-RB9"/>
             </connections>
             <point key="canvasLocation" x="515" y="177"/>
