@@ -17,7 +17,7 @@ class PPTabBarController: UITabBarController {
     }
    
     private func addChildViewControllers(){
-        addChildViewController(HomeViewController(), title: "礼物说", imageName: "tabbar_home")
+        addChildViewController(HomeViewController(), title: "首页", imageName: "tabbar_home")
         addChildViewController(HotViewController(), title: "热门", imageName: "tabbar_gift")
         addChildViewController(ClassfiyViewController(), title: "分类", imageName: "tabbar_category")
         addChildViewController(MeViewController(), title: "我", imageName: "tabbar_me")
