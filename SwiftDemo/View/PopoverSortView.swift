@@ -60,7 +60,7 @@ class PopoverSortView: UIView {
     
     private func  setupFrame(){
       bgImageView.frame = bounds
-      tableView?.frame = CGRectMake(0, 10, bounds.width, bounds.height)
+      tableView?.frame = CGRectMake(0, 0, bounds.width, bounds.height)
     }
     
     private lazy var maskCoverView: MaskCoverView = MaskCoverView()

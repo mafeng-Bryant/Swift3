@@ -29,11 +29,16 @@ extension UIBarButtonItem {
         self.init(customView: btn)
     }
     
-    
-    
-    
-
-
- 
+    /// 选礼神器
+    convenience init(chooseGifTarget: AnyObject?, action: Selector){
+        let btn = UIButton(type: UIButtonType.Custom)
+        btn.frame = CGRect(x: 0, y: 0, width: 60, height: 44)
+        btn.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
+        btn.setTitle("选礼神器", forState: UIControlState.Normal)
+        btn.titleLabel?.font = UIFont.systemFontOfSize(15.0)
+        btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        btn.addTarget(chooseGifTarget, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        self.init(customView: btn)
+    }
 
 }

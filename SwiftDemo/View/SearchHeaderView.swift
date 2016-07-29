@@ -83,10 +83,7 @@ class SearchHeaderView: UIView {
     }
     
     @objc private func clickSearchBtn(sender: UIButton){
-    
-        print("title = %@",sender.currentTitle);
-        
-        
+            NSNotificationCenter.defaultCenter().postNotificationName("Notif_BtnAction_SearchTag", object: nil)
     }
     
     

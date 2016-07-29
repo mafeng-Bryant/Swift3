@@ -12,24 +12,56 @@ class ClassfiyViewController: PPBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+         setupUI()
     }
 
+    override func viewWillAppear(animated: Bool) {
+       super.viewWillAppear(animated)
+    }
+    
+    override func viewWillLayoutSubviews() {
+      super.viewWillLayoutSubviews()
+      setupFrame()
+    }
+    
+    private func setupUI(){
+    automaticallyAdjustsScrollViewInsets = false
+    view.backgroundColor = Color_GlobalBackground
+    navigationItem.titleView = UIView()
+    navigationItem.rightBarButtonItem = UIBarButtonItem(chooseGifTarget: self, action: #selector(ClassfiyViewController.searchGifBtnAction))
+
+        
+    }
+    
+    @objc private func searchGifBtnAction(){
+    
+        
+        
+     
+        
+        
+    }
+    
+    
+    
+    
+    private lazy var titleView:UIView = UIView()
+    
+    
+    
+    
+    
+    
+    
+    private func setupFrame(){
+    
+    
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

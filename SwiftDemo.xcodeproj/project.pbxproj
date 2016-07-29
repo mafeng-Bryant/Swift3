@@ -54,6 +54,8 @@
 		E2A3A9701D4862930009B8D9 /* MaskCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A3A96F1D4862930009B8D9 /* MaskCoverView.swift */; };
 		E2CA03F21D49BA9C00D3EFCA /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA03F11D49BA9C00D3EFCA /* SearchHeaderView.swift */; };
 		E2CA03F41D49BC9C00D3EFCA /* SearchGiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2CA03F31D49BC9C00D3EFCA /* SearchGiftCell.xib */; };
+		E2CD18B51D4AF70600CE82D5 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CD18B31D4AF70600CE82D5 /* SearchResultViewController.swift */; };
+		E2CD18B61D4AF70600CE82D5 /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2CD18B41D4AF70600CE82D5 /* SearchResultViewController.xib */; };
 		E2D83EE81D49F85A00F7744D /* PPBaseGoodsFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D83EE71D49F85A00F7744D /* PPBaseGoodsFeedController.swift */; };
 		E2D83EEA1D49F8BF00F7744D /* PPSearchGifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D83EE91D49F8BF00F7744D /* PPSearchGifViewController.swift */; };
 		E2D83EEE1D49FF0D00F7744D /* BaseGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D83EEB1D49FF0D00F7744D /* BaseGoodsCell.swift */; };
@@ -153,6 +155,8 @@
 		E2A3A96F1D4862930009B8D9 /* MaskCoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskCoverView.swift; sourceTree = "<group>"; };
 		E2CA03F11D49BA9C00D3EFCA /* SearchHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
 		E2CA03F31D49BC9C00D3EFCA /* SearchGiftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchGiftCell.xib; sourceTree = "<group>"; };
+		E2CD18B31D4AF70600CE82D5 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		E2CD18B41D4AF70600CE82D5 /* SearchResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
 		E2D83EE71D49F85A00F7744D /* PPBaseGoodsFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBaseGoodsFeedController.swift; sourceTree = "<group>"; };
 		E2D83EE91D49F8BF00F7744D /* PPSearchGifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPSearchGifViewController.swift; sourceTree = "<group>"; };
 		E2D83EEB1D49FF0D00F7744D /* BaseGoodsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGoodsCell.swift; sourceTree = "<group>"; };
@@ -308,6 +312,8 @@
 		E28FF4861D49AAF300C3D119 /* search */ = {
 			isa = PBXGroup;
 			children = (
+				E2CD18B31D4AF70600CE82D5 /* SearchResultViewController.swift */,
+				E2CD18B41D4AF70600CE82D5 /* SearchResultViewController.xib */,
 				E28FF4871D49AB4700C3D119 /* PPSearchViewController.swift */,
 				E2D83EE71D49F85A00F7744D /* PPBaseGoodsFeedController.swift */,
 				E2D83EE91D49F8BF00F7744D /* PPSearchGifViewController.swift */,
@@ -610,6 +616,7 @@
 				E23299DD1D48DB6400872492 /* TopicCell.xib in Resources */,
 				E2329A071D48DE1500872492 /* strategy_10.jpg in Resources */,
 				E2329A0F1D48DE1500872492 /* strategy_2.jpg in Resources */,
+				E2CD18B61D4AF70600CE82D5 /* SearchResultViewController.xib in Resources */,
 				E23299D71D48D5FE00872492 /* BaseStrategyCell.xib in Resources */,
 				E2FE6D241D3DCB5D008D9BED /* LaunchScreen.storyboard in Resources */,
 				E2329A131D48DE1500872492 /* strategy_6.jpg in Resources */,
@@ -721,6 +728,7 @@
 				E25AE2CB1D3F28CD00441EFA /* TabBarExtension.swift in Sources */,
 				E2E2F9E01D41F31000E94489 /* HomeViewController.swift in Sources */,
 				E2E2F9E51D41F34E00E94489 /* LoginViewController.swift in Sources */,
+				E2CD18B51D4AF70600CE82D5 /* SearchResultViewController.swift in Sources */,
 				E28FF4881D49AB4700C3D119 /* PPSearchViewController.swift in Sources */,
 				E25AE2C01D3DD7AB00441EFA /* UIColor+Category.m in Sources */,
 				E2E2F9ED1D420D4F00E94489 /* PopoverCategoryView.swift in Sources */,

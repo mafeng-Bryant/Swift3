@@ -50,6 +50,8 @@ class PPSearchViewController: PPBaseViewController {
        tableView?.backgroundColor = Color_GlobalBackground
        tableView?.tableHeaderView = searchHeadView
        tableView?.registerNib(UINib(nibName: "SearchGiftCell",bundle: NSBundle.mainBundle() ), forCellReuseIdentifier: searchCellIdentifier)
+        tableView?.tableHeaderView = searchHeadView
+
        view.addSubview(sortView)
     }
     
@@ -74,7 +76,7 @@ class PPSearchViewController: PPBaseViewController {
      private lazy var rightBtn: UIButton = UIButton(cancelTarget:self, action: #selector(PPSearchViewController.rightBtnAction))
 
      private func addNotification(){
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PPSearchViewController.tagButtonAction), name: Notification_Search_Tag, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PPSearchViewController.tagButtonAction), name: "Notif_BtnAction_SearchTag", object: nil)
      }
     
      private func removeNotification(){
@@ -82,7 +84,8 @@ class PPSearchViewController: PPBaseViewController {
      }
     
     @objc private func tagButtonAction(){
-        print("notification")
+        let searchResult = SearchResultViewController()
+        navigationController?.pushViewController(searchResult, animated: true)
     }
     
     
