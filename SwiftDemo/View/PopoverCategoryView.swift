@@ -113,7 +113,6 @@ class PopoverCategoryView: UIView {
     }
     
     
-    
     private func showPopoverView(){
     backgroundColor = backView.backgroundColor
     choseChannelBtn.selected = true
@@ -121,7 +120,6 @@ class PopoverCategoryView: UIView {
         
     squareCategoryBtnAction(cacheSquareCategoryBtns[selectCategoryBtn!.tag])
  
-        
     //显示蒙版
     showMaskView()
     superview!.insertSubview(popoverView!, belowSubview: self)

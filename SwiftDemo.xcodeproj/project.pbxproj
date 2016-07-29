@@ -54,6 +54,16 @@
 		E2A3A9701D4862930009B8D9 /* MaskCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A3A96F1D4862930009B8D9 /* MaskCoverView.swift */; };
 		E2CA03F21D49BA9C00D3EFCA /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA03F11D49BA9C00D3EFCA /* SearchHeaderView.swift */; };
 		E2CA03F41D49BC9C00D3EFCA /* SearchGiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2CA03F31D49BC9C00D3EFCA /* SearchGiftCell.xib */; };
+		E2D83EE81D49F85A00F7744D /* PPBaseGoodsFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D83EE71D49F85A00F7744D /* PPBaseGoodsFeedController.swift */; };
+		E2D83EEA1D49F8BF00F7744D /* PPSearchGifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D83EE91D49F8BF00F7744D /* PPSearchGifViewController.swift */; };
+		E2D83EEE1D49FF0D00F7744D /* BaseGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D83EEB1D49FF0D00F7744D /* BaseGoodsCell.swift */; };
+		E2D83EEF1D49FF0D00F7744D /* BaseGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D83EEC1D49FF0D00F7744D /* BaseGoodsCell.xib */; };
+		E2D83EF01D49FF0D00F7744D /* BaseGoodsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D83EED1D49FF0D00F7744D /* BaseGoodsCellModel.swift */; };
+		E2D83EF51D4A084300F7744D /* PopoverSortGifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D83EF31D4A084300F7744D /* PopoverSortGifView.swift */; };
+		E2D83EF61D4A084300F7744D /* PopoverSortGifView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D83EF41D4A084300F7744D /* PopoverSortGifView.xib */; };
+		E2D83EF81D4A1FC600F7744D /* PopoverSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D83EF71D4A1FC600F7744D /* PopoverSortView.swift */; };
+		E2D83EFA1D4A1FEE00F7744D /* PopoverSortCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D83EF91D4A1FEE00F7744D /* PopoverSortCell.xib */; };
+		E2D83EFC1D4A201000F7744D /* PopoverSortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D83EFB1D4A201000F7744D /* PopoverSortCell.swift */; };
 		E2E2F9CC1D41D3F800E94489 /* PPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9CB1D41D3F800E94489 /* PPBaseViewController.swift */; };
 		E2E2F9D61D41F20400E94489 /* PPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9D51D41F20400E94489 /* PPTabBarController.swift */; };
 		E2E2F9DA1D41F2A500E94489 /* HotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2F9D91D41F2A500E94489 /* HotViewController.swift */; };
@@ -143,6 +153,16 @@
 		E2A3A96F1D4862930009B8D9 /* MaskCoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskCoverView.swift; sourceTree = "<group>"; };
 		E2CA03F11D49BA9C00D3EFCA /* SearchHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
 		E2CA03F31D49BC9C00D3EFCA /* SearchGiftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchGiftCell.xib; sourceTree = "<group>"; };
+		E2D83EE71D49F85A00F7744D /* PPBaseGoodsFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBaseGoodsFeedController.swift; sourceTree = "<group>"; };
+		E2D83EE91D49F8BF00F7744D /* PPSearchGifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPSearchGifViewController.swift; sourceTree = "<group>"; };
+		E2D83EEB1D49FF0D00F7744D /* BaseGoodsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGoodsCell.swift; sourceTree = "<group>"; };
+		E2D83EEC1D49FF0D00F7744D /* BaseGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseGoodsCell.xib; sourceTree = "<group>"; };
+		E2D83EED1D49FF0D00F7744D /* BaseGoodsCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGoodsCellModel.swift; sourceTree = "<group>"; };
+		E2D83EF31D4A084300F7744D /* PopoverSortGifView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverSortGifView.swift; sourceTree = "<group>"; };
+		E2D83EF41D4A084300F7744D /* PopoverSortGifView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverSortGifView.xib; sourceTree = "<group>"; };
+		E2D83EF71D4A1FC600F7744D /* PopoverSortView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverSortView.swift; sourceTree = "<group>"; };
+		E2D83EF91D4A1FEE00F7744D /* PopoverSortCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverSortCell.xib; sourceTree = "<group>"; };
+		E2D83EFB1D4A201000F7744D /* PopoverSortCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverSortCell.swift; sourceTree = "<group>"; };
 		E2E2F9CB1D41D3F800E94489 /* PPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBaseViewController.swift; sourceTree = "<group>"; };
 		E2E2F9D51D41F20400E94489 /* PPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPTabBarController.swift; path = ../controller/PPTabBarController.swift; sourceTree = "<group>"; };
 		E2E2F9D91D41F2A500E94489 /* HotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				E28FF4871D49AB4700C3D119 /* PPSearchViewController.swift */,
+				E2D83EE71D49F85A00F7744D /* PPBaseGoodsFeedController.swift */,
+				E2D83EE91D49F8BF00F7744D /* PPSearchGifViewController.swift */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -349,6 +371,9 @@
 		E2E2F9EB1D420C9F00E94489 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E2D83EEB1D49FF0D00F7744D /* BaseGoodsCell.swift */,
+				E2D83EEC1D49FF0D00F7744D /* BaseGoodsCell.xib */,
+				E2D83EED1D49FF0D00F7744D /* BaseGoodsCellModel.swift */,
 				E23299D81D48D82E00872492 /* BannerCell.xib */,
 				E23299D41D48D5FE00872492 /* BaseStrategyCell.swift */,
 				E23299D51D48D5FE00872492 /* BaseStrategyCell.xib */,
@@ -360,6 +385,11 @@
 				E23299DB1D48DB6400872492 /* TopicCell.xib */,
 				E2CA03F11D49BA9C00D3EFCA /* SearchHeaderView.swift */,
 				E2CA03F31D49BC9C00D3EFCA /* SearchGiftCell.xib */,
+				E2D83EF31D4A084300F7744D /* PopoverSortGifView.swift */,
+				E2D83EF41D4A084300F7744D /* PopoverSortGifView.xib */,
+				E2D83EF71D4A1FC600F7744D /* PopoverSortView.swift */,
+				E2D83EFB1D4A201000F7744D /* PopoverSortCell.swift */,
+				E2D83EF91D4A1FEE00F7744D /* PopoverSortCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -560,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2329A0E1D48DE1500872492 /* strategy_17.jpg in Resources */,
+				E2D83EF61D4A084300F7744D /* PopoverSortGifView.xib in Resources */,
 				E2E2F9EF1D420D6500E94489 /* PopoverCategoryView.xib in Resources */,
 				E2329A001D48DE1500872492 /* goods_4.jpg in Resources */,
 				E2329A111D48DE1500872492 /* strategy_4.jpg in Resources */,
@@ -575,6 +606,7 @@
 				E2329A121D48DE1500872492 /* strategy_5.jpg in Resources */,
 				E2329A0D1D48DE1500872492 /* strategy_16.jpg in Resources */,
 				E2329A031D48DE1500872492 /* goods_7.jpg in Resources */,
+				E2D83EFA1D4A1FEE00F7744D /* PopoverSortCell.xib in Resources */,
 				E23299DD1D48DB6400872492 /* TopicCell.xib in Resources */,
 				E2329A071D48DE1500872492 /* strategy_10.jpg in Resources */,
 				E2329A0F1D48DE1500872492 /* strategy_2.jpg in Resources */,
@@ -584,6 +616,7 @@
 				E2329A091D48DE1500872492 /* strategy_12.jpg in Resources */,
 				E23299FE1D48DE1500872492 /* goods_2.jpg in Resources */,
 				E2329A101D48DE1500872492 /* strategy_3.jpg in Resources */,
+				E2D83EEF1D49FF0D00F7744D /* BaseGoodsCell.xib in Resources */,
 				E23299FC1D48DE1500872492 /* goods_1.jpg in Resources */,
 				E2329A041D48DE1500872492 /* goods_8.jpg in Resources */,
 				E2329A051D48DE1500872492 /* goods_9.jpg in Resources */,
@@ -673,12 +706,17 @@
 				E27163041D47A05F0047F042 /* PPChoiceStrategyFeedController.swift in Sources */,
 				E2E2F9DE1D41F2D400E94489 /* ClassfiyViewController.swift in Sources */,
 				E27163021D47A0230047F042 /* PPBaseStrategyFeedViewController.swift in Sources */,
+				E2D83EEE1D49FF0D00F7744D /* BaseGoodsCell.swift in Sources */,
 				E23299D61D48D5FE00872492 /* BaseStrategyCell.swift in Sources */,
 				E23299D31D48C0DA00872492 /* PPTopCollectionView.swift in Sources */,
 				E2FF08311D3F763D00AB03BA /* NavgationBarExtension.swift in Sources */,
 				E2E2F9DA1D41F2A500E94489 /* HotViewController.swift in Sources */,
+				E2D83EF81D4A1FC600F7744D /* PopoverSortView.swift in Sources */,
 				E258AE2D1D41C802008349C2 /* UIImage+Extension.swift in Sources */,
 				E25AE2C51D3F278700441EFA /* PPBaseNavigationController.swift in Sources */,
+				E2D83EEA1D49F8BF00F7744D /* PPSearchGifViewController.swift in Sources */,
+				E2D83EF01D49FF0D00F7744D /* BaseGoodsCellModel.swift in Sources */,
+				E2D83EFC1D4A201000F7744D /* PopoverSortCell.swift in Sources */,
 				E2FE6CF41D3DC846008D9BED /* AppDelegate.swift in Sources */,
 				E25AE2CB1D3F28CD00441EFA /* TabBarExtension.swift in Sources */,
 				E2E2F9E01D41F31000E94489 /* HomeViewController.swift in Sources */,
@@ -687,10 +725,12 @@
 				E25AE2C01D3DD7AB00441EFA /* UIColor+Category.m in Sources */,
 				E2E2F9ED1D420D4F00E94489 /* PopoverCategoryView.swift in Sources */,
 				E25AE2C21D3DDBB500441EFA /* UIButton+Extension.swift in Sources */,
+				E2D83EF51D4A084300F7744D /* PopoverSortGifView.swift in Sources */,
 				E28FF48A1D49B54B00C3D119 /* UISearchBar+Extension.swift in Sources */,
 				E2E2F9E81D41F3BF00E94489 /* Common.swift in Sources */,
 				E2A3A9701D4862930009B8D9 /* MaskCoverView.swift in Sources */,
 				E2E2F9D61D41F20400E94489 /* PPTabBarController.swift in Sources */,
+				E2D83EE81D49F85A00F7744D /* PPBaseGoodsFeedController.swift in Sources */,
 				E27163061D47A0A00047F042 /* PPCommonStrategyFeedController.swift in Sources */,
 				E2CA03F21D49BA9C00D3EFCA /* SearchHeaderView.swift in Sources */,
 			);

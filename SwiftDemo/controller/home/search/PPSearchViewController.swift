@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let searchCellIdentifier = "searchGiftCell"
+private let searchCellIdentifier = "SearchGiftCell"
 
 class PPSearchViewController: PPBaseViewController {
 
@@ -22,7 +22,11 @@ class PPSearchViewController: PPBaseViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+//        self.performSelector(#selector(PPSearchViewController.searchBarBecomeFirstResponder), withObject: nil, afterDelay: 0.3)
+    }
+    
+   @objc private func searchBarBecomeFirstResponder(){
+      searchBar.becomeFirstResponder()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -44,8 +48,8 @@ class PPSearchViewController: PPBaseViewController {
        tableView?.sectionFooterHeight = 0.01
        tableView?.separatorStyle = UITableViewCellSeparatorStyle.None
        tableView?.backgroundColor = Color_GlobalBackground
-       tableView?.tableHeaderView = SearchHeaderView()
-       tableView?.registerNib(UINib(nibName: "searchGiftCell",bundle: NSBundle.mainBundle() ), forCellReuseIdentifier: searchCellIdentifier)
+       tableView?.tableHeaderView = searchHeadView
+       tableView?.registerNib(UINib(nibName: "SearchGiftCell",bundle: NSBundle.mainBundle() ), forCellReuseIdentifier: searchCellIdentifier)
        view.addSubview(sortView)
     }
     
@@ -58,8 +62,10 @@ class PPSearchViewController: PPBaseViewController {
     }()
     
     private lazy var searchHeadView: SearchHeaderView = {
-     let searchView = SearchHeaderView()
-        
+          let searchView = SearchHeaderView.init(layoutFinish: { (height) in
+            self.searchHeadView.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: height)
+            self.tableView?.tableHeaderView = self.searchHeadView
+        })
       return searchView
     }()
     
@@ -67,27 +73,21 @@ class PPSearchViewController: PPBaseViewController {
     
      private lazy var rightBtn: UIButton = UIButton(cancelTarget:self, action: #selector(PPSearchViewController.rightBtnAction))
 
-    
      private func addNotification(){
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PPSearchViewController.tagButtonAction), name: Notification_Search_Tag, object: nil)
      }
-    
     
      private func removeNotification(){
      NSNotificationCenter.defaultCenter().removeObserver(self, name:Notification_Search_Tag , object: nil)
      }
     
-    
     @objc private func tagButtonAction(){
- 
         print("notification")
     }
     
     
     @objc private func rightBtnAction(){
-     
-        
-    
+     self.navigationController?.popViewControllerAnimated(true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -118,14 +118,12 @@ extension PPSearchViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-      //  searchBarResignFirstResponder()
-     //   navigationController?.pushViewController(SearchGifViewController(), animated: true)
+        navigationController?.pushViewController(PPSearchGifViewController(), animated: true)
     }
-
 }
 
 extension PPSearchViewController:UISearchBarDelegate {
-
+   
     
     
     
