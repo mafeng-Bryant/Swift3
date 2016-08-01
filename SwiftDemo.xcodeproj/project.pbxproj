@@ -58,6 +58,7 @@
 		E2B294841D4BA4A400BD0C8D /* StrategyColumnCellCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B294801D4BA4A400BD0C8D /* StrategyColumnCellCell.xib */; };
 		E2B294871D4BA54700BD0C8D /* StrategyCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B294851D4BA54700BD0C8D /* StrategyCategoryCell.swift */; };
 		E2B294881D4BA54700BD0C8D /* StrategyCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B294861D4BA54700BD0C8D /* StrategyCategoryCell.xib */; };
+		E2B2948A1D4C4D2D00BD0C8D /* SingleGifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B294891D4C4D2D00BD0C8D /* SingleGifViewController.swift */; };
 		E2B6BB461D4B825A005CF620 /* StrategyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6BB451D4B825A005CF620 /* StrategyViewController.swift */; };
 		E2B6BB481D4B8776005CF620 /* StrategySectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B6BB471D4B8776005CF620 /* StrategySectionView.xib */; };
 		E2CA03F21D49BA9C00D3EFCA /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA03F11D49BA9C00D3EFCA /* SearchHeaderView.swift */; };
@@ -168,6 +169,7 @@
 		E2B294801D4BA4A400BD0C8D /* StrategyColumnCellCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StrategyColumnCellCell.xib; sourceTree = "<group>"; };
 		E2B294851D4BA54700BD0C8D /* StrategyCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyCategoryCell.swift; sourceTree = "<group>"; };
 		E2B294861D4BA54700BD0C8D /* StrategyCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StrategyCategoryCell.xib; sourceTree = "<group>"; };
+		E2B294891D4C4D2D00BD0C8D /* SingleGifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleGifViewController.swift; sourceTree = "<group>"; };
 		E2B6BB451D4B825A005CF620 /* StrategyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyViewController.swift; sourceTree = "<group>"; };
 		E2B6BB471D4B8776005CF620 /* StrategySectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StrategySectionView.xib; sourceTree = "<group>"; };
 		E2CA03F11D49BA9C00D3EFCA /* SearchHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			children = (
 				E2E2F9DD1D41F2D400E94489 /* ClassfiyViewController.swift */,
 				E2B6BB451D4B825A005CF620 /* StrategyViewController.swift */,
+				E2B294891D4C4D2D00BD0C8D /* SingleGifViewController.swift */,
 			);
 			path = Classfiy;
 			sourceTree = "<group>";
@@ -763,6 +766,7 @@
 				E2E2F9E01D41F31000E94489 /* HomeViewController.swift in Sources */,
 				E2E2F9E51D41F34E00E94489 /* LoginViewController.swift in Sources */,
 				E2CD18B51D4AF70600CE82D5 /* SearchResultViewController.swift in Sources */,
+				E2B2948A1D4C4D2D00BD0C8D /* SingleGifViewController.swift in Sources */,
 				E28FF4881D49AB4700C3D119 /* PPSearchViewController.swift in Sources */,
 				E2B6BB461D4B825A005CF620 /* StrategyViewController.swift in Sources */,
 				E2B294811D4BA4A400BD0C8D /* StrategyColumnCell.swift in Sources */,

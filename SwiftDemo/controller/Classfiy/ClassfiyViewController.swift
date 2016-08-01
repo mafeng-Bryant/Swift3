@@ -75,12 +75,9 @@ class ClassfiyViewController: PPBaseViewController {
 }
 
 extension ClassfiyViewController:PPTitleViewDelegate {
- 
     func clickIndex(index: NSInteger) {
-        
-        
+        scrollView.setContentOffset(CGPointMake(CGFloat(index) * scrollView.bounds.width, 0), animated: true)
     }
-
 }
 
 extension ClassfiyViewController:UISearchBarDelegate {
