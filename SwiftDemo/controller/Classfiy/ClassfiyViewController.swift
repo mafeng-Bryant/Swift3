@@ -30,11 +30,13 @@ class ClassfiyViewController: PPBaseViewController {
         navigationItem.titleView = titleView
         navigationItem.rightBarButtonItem = UIBarButtonItem(chooseGifTarget: self, action: #selector(ClassfiyViewController.searchGifBtnAction))
         navigationItem.rightBarButtonItem?.customView?.alpha = 0;
-       view.addSubview(searchBar)
-       view.addSubview(scrollView)
+        view.addSubview(searchBar)
+        view.addSubview(scrollView)
         scrollView.addSubview(strategyVC.view)
-       addChildViewController(strategyVC)
-     }
+        addChildViewController(strategyVC)
+        scrollView.addSubview(singleVC.view)
+        addChildViewController(singleVC)
+    }
     
     private lazy var searchBar: UISearchBar =  UISearchBar(searchGifdelegate: self, backgroundColor:UIColor(white: 0, alpha: 0.05), backgroundImage:UIImage.imageWithColor(UIColor.whiteColor(), size: CGSizeZero))
     
@@ -45,6 +47,8 @@ class ClassfiyViewController: PPBaseViewController {
         view.pagingEnabled = true
         return view
     }()
+    
+    private lazy var singleVC: SingleGifViewController = SingleGifViewController()
     
     private lazy var strategyVC: StrategyViewController = StrategyViewController()
 
@@ -66,7 +70,8 @@ class ClassfiyViewController: PPBaseViewController {
         self.scrollView.frame = CGRectMake(0, CGRectGetMaxY(self.searchBar.frame), self.view.bounds.width, self.view.bounds.height - self.searchBar.bounds.height - 44.0)
         self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.width * 2.0, self.scrollView.bounds.height)
         self.strategyVC.view.frame = self.scrollView.bounds
-    }
+        self.singleVC.view.frame = CGRectMake(CGRectGetWidth(self.scrollView.frame), 0, self.scrollView.bounds.width, self.scrollView.bounds.height)
+   }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -81,6 +86,7 @@ extension ClassfiyViewController:PPTitleViewDelegate {
 }
 
 extension ClassfiyViewController:UISearchBarDelegate {
+    
 
  
 }

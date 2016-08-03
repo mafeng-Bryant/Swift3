@@ -23,6 +23,10 @@ class SingleGifColumnCell: UITableViewCell {
         titleBtn.setBackgroundImage(UIImage.imageWithColor(UIColor.whiteColor(), size: CGSizeZero), forState: UIControlState.Selected)
     }
     
+    func setHeaderTitle(title:String) {
+     titleBtn.setTitle(title, forState: UIControlState.Normal)
+   }
+    
     func changeStatus(selected: Bool) {
         titleBtn.selected = selected
         edgeLineView.hidden = !selected

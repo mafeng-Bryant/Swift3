@@ -19,9 +19,9 @@ class SingleGifViewController: PPBaseViewController {
 
     
     private var headerSize:CGSize?
-    private var selectedColumn = 0
     private let headerDatas:[String] = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R"]
-    
+    var isScrollTabelView:Bool = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
             setUpUI()
@@ -79,18 +79,17 @@ class SingleGifViewController: PPBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }
 
 extension SingleGifViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 18
+        return headerDatas.count
     }
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(columnCellID) as! SingleGifColumnCell
-        cell.changeStatus(indexPath.row == selectedColumn ? true : false)
+        cell.setHeaderTitle(headerDatas[indexPath.row])
+      //  cell.changeStatus(indexPath.row == self.oldIndexpath.section ? true : false)
         return cell
     }
     
@@ -99,12 +98,12 @@ extension SingleGifViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-      selectedColumn = indexPath.row
-      tableView.reloadData()
-      //滚动商品列表
-        
-        
+        let selectIndexPath = NSIndexPath(forRow: 0,inSection: indexPath.row)
+        isScrollTabelView = false
+        //滚动商品列表
+        collectionView.scrollToItemAtIndexPath(selectIndexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
     }
+
 }
 
 extension SingleGifViewController: UICollectionViewDelegate,UICollectionViewDataSource
@@ -115,24 +114,28 @@ extension SingleGifViewController: UICollectionViewDelegate,UICollectionViewData
     }
   
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 18
+        return headerDatas.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! SingleGifCell
-       //scroll tableView
-        
-        
+        //scroll tableView ,开始滚动collectionView
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
-        
+
+    func collectionView(collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, atIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            return
+        }
+        if isScrollTabelView == true {
+            
+            let selectIndexPath = NSIndexPath(forRow: indexPath.section - 1,inSection: 0)
+            self.tableView.scrollToRowAtIndexPath(selectIndexPath, atScrollPosition: UITableViewScrollPosition.None, animated: true)
+      }
     }
     
     //header collectionView
-    
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let sectionView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: sectionID, forIndexPath: indexPath) as! SingleGifSectionView
         sectionView.setHeaderData(headerDatas[indexPath.section])
@@ -146,6 +149,9 @@ extension SingleGifViewController: UICollectionViewDelegate,UICollectionViewData
         return UIEdgeInsetsMake(cellMargin, cellMargin, cellMargin, cellMargin);
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0 {
+            return CGSizeZero
+        }
        return headerSize!
     }
     
@@ -154,6 +160,29 @@ extension SingleGifViewController: UICollectionViewDelegate,UICollectionViewData
         let height = width / cellScale
         return CGSize(width: width, height: height)
     }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        if scrollView.isKindOfClass(UICollectionView) {
+             isScrollTabelView = true
+        }
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.isKindOfClass(UIScrollView) {
+            if isScrollTabelView == true {
+                
+                
+                
+                
+                
+                
+                
+                
+            }
+       }
+        
+    }
+    
     
 }
 
@@ -174,7 +203,5 @@ class SingleGifSectionView: UICollectionReusableView {
     func setHeaderData(titleString:String){
       titleLbl.text = titleString
     }
-    
-    
 }
 
