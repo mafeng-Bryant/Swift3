@@ -23,15 +23,57 @@ class SingleGifViewController: PPBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+            setUpUI()
+    }
+    
+    override func viewWillLayoutSubviews() {
+       super.viewWillLayoutSubviews()
+        setupUIFrame()
+    }
+    
+    private func setupUIFrame(){
+    
+    
         
     }
+
+    
+
+        private func setUpUI(){
+        automaticallyAdjustsScrollViewInsets = false
+        view.backgroundColor = UIColor.whiteColor()
+        view.addSubview(tableView);
+        view.addSubview(collectionView)
+    }
+    
+    private lazy var tableView:UITableView = {
+        let tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
+        
+        
+        return tableView;
+    }()
+    
+    private lazy var collectionView:UICollectionView = {
+        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: collectionLayout())
+        return collectionView
+    }()
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-
 }
+
+
+class collectionLayout: UICollectionViewFlowLayout {
+    override func prepareLayout() {
+        super.prepareLayout()
+        minimumInteritemSpacing = cellMargin * 0.5
+        minimumLineSpacing = cellMargin
+        scrollDirection = UICollectionViewScrollDirection.Vertical
+     }
+}
+
+

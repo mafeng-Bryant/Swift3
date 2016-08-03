@@ -51,28 +51,20 @@ class PPTitleView: UIView {
     }
     
     @objc private func strategyBtnAction(){
-      UIView.animateWithDuration(0.25) {
-            self.line.frame = CGRectMake(self.lineMargin*0.5, self.frame.height - 6, self.frame.width*0.5 - self.lineMargin, 2.0)
-        }
        if let delegate =  delegate {
           delegate.clickIndex(0)
         }
     }
     
     @objc private func singleBtnAction(){
-        UIView.animateWithDuration(0.25) {
-         self.line.frame = CGRectMake(self.lineMargin*0.5 + self.frame.width*0.5, self.frame.height - 6, self.frame.width*0.5 - self.lineMargin, 2.0)
-        }
         if let delegate = delegate {
             delegate.clickIndex(1)
         }
     }
     
     //public method
-    func scrollLine(){
-        UIView.animateWithDuration(0.25) {
-            self.line.frame = CGRectMake(self.lineMargin*0.5 + self.frame.width*0.5, self.frame.height - 6, self.frame.width*0.5 - self.lineMargin, 2.0)
-        }
+    func scrollLine(scrollViewWidth: CGFloat, offsetX: CGFloat){
+        self.line.frame.origin.x =  self.lineMargin * 0.5 + offsetX / scrollViewWidth * (bounds.width - self.line.bounds.width - self.lineMargin)
     }
     
     // MARK: - 懒加载

@@ -83,20 +83,13 @@ extension ClassfiyViewController:PPTitleViewDelegate {
 extension ClassfiyViewController:UISearchBarDelegate {
 
  
-    
-
 }
 
 extension ClassfiyViewController:UIScrollViewDelegate {
-
-    
-    func scrollViewDidScrollToTop(scrollView: UIScrollView) {
-        
-        
-        
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        navigationItem.rightBarButtonItem?.customView?.alpha = scrollView.contentOffset.x / scrollView.bounds.width;
+        titleView.scrollLine(scrollView.bounds.width, offsetX: scrollView.contentOffset.x);
     }
-
-
 }
 
 
