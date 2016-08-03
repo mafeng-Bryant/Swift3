@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		23005A932088ED5D974C696A /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36049F03E5FD7891DD995A53 /* Pods_SwiftDemo.framework */; };
+		E21E59711D51A4B7001758C2 /* SingleGifColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E596F1D51A4B7001758C2 /* SingleGifColumnCell.swift */; };
+		E21E59721D51A4B7001758C2 /* SingleGifColumnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E21E59701D51A4B7001758C2 /* SingleGifColumnCell.xib */; };
+		E21E59751D51C53C001758C2 /* SingleGifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E59731D51C53C001758C2 /* SingleGifCell.swift */; };
+		E21E59761D51C53C001758C2 /* SingleGifCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E21E59741D51C53C001758C2 /* SingleGifCell.xib */; };
+		E21E59781D51C6F1001758C2 /* SingleGifSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E21E59771D51C6F1001758C2 /* SingleGifSectionView.xib */; };
 		E23299D11D48BF0600872492 /* PPBannerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23299D01D48BF0600872492 /* PPBannerCollectionView.swift */; };
 		E23299D31D48C0DA00872492 /* PPTopCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23299D21D48C0DA00872492 /* PPTopCollectionView.swift */; };
 		E23299D61D48D5FE00872492 /* BaseStrategyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23299D41D48D5FE00872492 /* BaseStrategyCell.swift */; };
@@ -117,6 +122,11 @@
 		36049F03E5FD7891DD995A53 /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		878742F0E20855AA46AC35FB /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		AD78ABDD21CEA39F76AC8F64 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E21E596F1D51A4B7001758C2 /* SingleGifColumnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleGifColumnCell.swift; sourceTree = "<group>"; };
+		E21E59701D51A4B7001758C2 /* SingleGifColumnCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleGifColumnCell.xib; sourceTree = "<group>"; };
+		E21E59731D51C53C001758C2 /* SingleGifCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleGifCell.swift; sourceTree = "<group>"; };
+		E21E59741D51C53C001758C2 /* SingleGifCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleGifCell.xib; sourceTree = "<group>"; };
+		E21E59771D51C6F1001758C2 /* SingleGifSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleGifSectionView.xib; sourceTree = "<group>"; };
 		E23299D01D48BF0600872492 /* PPBannerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBannerCollectionView.swift; sourceTree = "<group>"; };
 		E23299D21D48C0DA00872492 /* PPTopCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTopCollectionView.swift; sourceTree = "<group>"; };
 		E23299D41D48D5FE00872492 /* BaseStrategyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStrategyCell.swift; sourceTree = "<group>"; };
@@ -399,6 +409,11 @@
 		E2E2F9EB1D420C9F00E94489 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E21E59771D51C6F1001758C2 /* SingleGifSectionView.xib */,
+				E21E59731D51C53C001758C2 /* SingleGifCell.swift */,
+				E21E59741D51C53C001758C2 /* SingleGifCell.xib */,
+				E21E596F1D51A4B7001758C2 /* SingleGifColumnCell.swift */,
+				E21E59701D51A4B7001758C2 /* SingleGifColumnCell.xib */,
 				E2D83EEB1D49FF0D00F7744D /* BaseGoodsCell.swift */,
 				E2D83EEC1D49FF0D00F7744D /* BaseGoodsCell.xib */,
 				E2D83EED1D49FF0D00F7744D /* BaseGoodsCellModel.swift */,
@@ -631,6 +646,8 @@
 				E2329A001D48DE1500872492 /* goods_4.jpg in Resources */,
 				E2329A111D48DE1500872492 /* strategy_4.jpg in Resources */,
 				E2329A061D48DE1500872492 /* strategy_1.jpg in Resources */,
+				E21E59721D51A4B7001758C2 /* SingleGifColumnCell.xib in Resources */,
+				E21E59781D51C6F1001758C2 /* SingleGifSectionView.xib in Resources */,
 				E23299D91D48D82E00872492 /* BannerCell.xib in Resources */,
 				E2329A141D48DE1500872492 /* strategy_7.jpg in Resources */,
 				E2E2F9E41D41F34E00E94489 /* LoginViewController.storyboard in Resources */,
@@ -640,6 +657,7 @@
 				E2329A151D48DE1500872492 /* strategy_8.jpg in Resources */,
 				E23299FD1D48DE1500872492 /* goods_10.jpg in Resources */,
 				E2329A121D48DE1500872492 /* strategy_5.jpg in Resources */,
+				E21E59761D51C53C001758C2 /* SingleGifCell.xib in Resources */,
 				E2329A0D1D48DE1500872492 /* strategy_16.jpg in Resources */,
 				E2B294881D4BA54700BD0C8D /* StrategyCategoryCell.xib in Resources */,
 				E2329A031D48DE1500872492 /* goods_7.jpg in Resources */,
@@ -745,9 +763,11 @@
 				E23299D11D48BF0600872492 /* PPBannerCollectionView.swift in Sources */,
 				E2E2F9CC1D41D3F800E94489 /* PPBaseViewController.swift in Sources */,
 				E27163041D47A05F0047F042 /* PPChoiceStrategyFeedController.swift in Sources */,
+				E21E59751D51C53C001758C2 /* SingleGifCell.swift in Sources */,
 				E2E2F9DE1D41F2D400E94489 /* ClassfiyViewController.swift in Sources */,
 				E27163021D47A0230047F042 /* PPBaseStrategyFeedViewController.swift in Sources */,
 				E2D83EEE1D49FF0D00F7744D /* BaseGoodsCell.swift in Sources */,
+				E21E59711D51A4B7001758C2 /* SingleGifColumnCell.swift in Sources */,
 				E23299D61D48D5FE00872492 /* BaseStrategyCell.swift in Sources */,
 				E2CD18C31D4B5A6700CE82D5 /* PPTitleView.swift in Sources */,
 				E23299D31D48C0DA00872492 /* PPTopCollectionView.swift in Sources */,
