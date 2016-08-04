@@ -181,6 +181,7 @@ extension SingleGifViewController: UICollectionViewDelegate,UICollectionViewData
 //                print("y = %f",offsetY)
 //            }
 //       
+            
            let path = NSIndexPath(forRow: indexPath!.section, inSection: 0)
             column = path.row
             if column <= headerDatas.count  {
