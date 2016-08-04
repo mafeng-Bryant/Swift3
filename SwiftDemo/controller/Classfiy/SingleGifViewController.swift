@@ -140,13 +140,13 @@ extension SingleGifViewController: UICollectionViewDelegate,UICollectionViewData
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         if scrollView.isKindOfClass(UICollectionView) {
              isScrollTabelView = true
+            
         }
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollView.isKindOfClass(UIScrollView) {
-        if isScrollTabelView == true {
-            
+         if isScrollTabelView == true {
             let point = self.view.convertPoint(self.collectionView.center, toView: self.collectionView)
             var indexPath = self.collectionView.indexPathForItemAtPoint(point)
             if indexPath == nil {
@@ -164,24 +164,6 @@ extension SingleGifViewController: UICollectionViewDelegate,UICollectionViewData
                     return
                 }
             }
-            
-             print("contentOffset y = %f",scrollView.contentOffset.y)
-
-            print("offsetY  = %f",offsetY)
-
-            
-//            if scrollView.contentOffset.y > offsetY {
-//                return
-//            }else {
-//              offsetY = CGFloat.max
-//            }
-//            
-//            if indexPath!.section == headerDatas.count - 1 {
-//                offsetY = scrollView.contentOffset.y
-//                print("y = %f",offsetY)
-//            }
-//       
-            
            let path = NSIndexPath(forRow: indexPath!.section, inSection: 0)
             column = path.row
             if column <= headerDatas.count  {
