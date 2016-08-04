@@ -21,7 +21,9 @@ class SingleGifViewController: PPBaseViewController {
     private var headerSize:CGSize?
     private let headerDatas:[String] = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R"]
     var isScrollTabelView:Bool = true
-
+    var column:NSInteger = 0
+    var offsetY:CGFloat = CGFloat.max
+    
     override func viewDidLoad() {
         super.viewDidLoad()
             setUpUI()
@@ -51,6 +53,7 @@ class SingleGifViewController: PPBaseViewController {
         tableView.dataSource = self
         tableView.backgroundColor = Color_GlobalBackground
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.pagingEnabled = true
         tableView.showsHorizontalScrollIndicator = false
         tableView.showsVerticalScrollIndicator = false
         tableView.sectionFooterHeight = 0.0001
@@ -89,7 +92,7 @@ extension SingleGifViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(columnCellID) as! SingleGifColumnCell
         cell.setHeaderTitle(headerDatas[indexPath.row])
-      //  cell.changeStatus(indexPath.row == self.oldIndexpath.section ? true : false)
+        cell.changeStatus(indexPath.row == column ? true : false)
         return cell
     }
     
@@ -98,8 +101,20 @@ extension SingleGifViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let selectIndexPath = NSIndexPath(forRow: 0,inSection: indexPath.row)
+        column = selectIndexPath.section
         isScrollTabelView = false
+        self.tableView.reloadData()
+        //set offsetY
+        let cell = self.tableView.cellForRowAtIndexPath(indexPath)
+        if cell!.center.y < self.tableView.bounds.height * 0.5 {
+            self.tableView.setContentOffset(CGPointZero, animated: true)
+         } else if  self.tableView.contentSize.height >  view.bounds.height && cell!.center.y > view.bounds.height * 0.5 && cell!.center.y < (self.tableView.contentSize.height -  view.bounds.height * 0.5) {
+            self.tableView.setContentOffset(CGPointMake(0,cell!.frame.origin.y + cell!.bounds.height * 0.5 - view.bounds.height * 0.5), animated: true)
+         } else {
+            self.tableView.setContentOffset(CGPointMake(0,max(0,self.tableView.contentSize.height - self.tableView.bounds.size.height)), animated: true)
+        }
         //滚动商品列表
         collectionView.scrollToItemAtIndexPath(selectIndexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
     }
@@ -110,7 +125,7 @@ extension SingleGifViewController: UICollectionViewDelegate,UICollectionViewData
 {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return 6
+       return 9
     }
   
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -119,28 +134,71 @@ extension SingleGifViewController: UICollectionViewDelegate,UICollectionViewData
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! SingleGifCell
-        //scroll tableView ,开始滚动collectionView
         return cell
     }
-    
 
-    func collectionView(collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, atIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 {
-            return
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        if scrollView.isKindOfClass(UICollectionView) {
+             isScrollTabelView = true
         }
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.isKindOfClass(UIScrollView) {
         if isScrollTabelView == true {
             
-            let selectIndexPath = NSIndexPath(forRow: indexPath.section - 1,inSection: 0)
-            self.tableView.scrollToRowAtIndexPath(selectIndexPath, atScrollPosition: UITableViewScrollPosition.None, animated: true)
-      }
+            let point = self.view.convertPoint(self.collectionView.center, toView: self.collectionView)
+            var indexPath = self.collectionView.indexPathForItemAtPoint(point)
+            if indexPath == nil {
+                indexPath = NSIndexPath(forRow: 0, inSection: 0)
+            }
+             if indexPath!.section == 0 {
+                let array = self.collectionView.indexPathsForVisibleSupplementaryElementsOfKind(UICollectionElementKindSectionHeader)
+                if array.count > 0 {
+                    if (array[0].section == 0 || array[0].section == 1) {
+                        let path = NSIndexPath(forRow: 0, inSection: 0)
+                        column = 0
+                        self.tableView.scrollToRowAtIndexPath(path, atScrollPosition: UITableViewScrollPosition.None, animated: false)
+                        self.tableView.reloadData()
+                    }
+                    return
+                }
+            }
+            
+             print("contentOffset y = %f",scrollView.contentOffset.y)
+
+            print("offsetY  = %f",offsetY)
+
+            
+//            if scrollView.contentOffset.y > offsetY {
+//                return
+//            }else {
+//              offsetY = CGFloat.max
+//            }
+//            
+//            if indexPath!.section == headerDatas.count - 1 {
+//                offsetY = scrollView.contentOffset.y
+//                print("y = %f",offsetY)
+//            }
+//       
+           let path = NSIndexPath(forRow: indexPath!.section, inSection: 0)
+            column = path.row
+            if column <= headerDatas.count  {
+                self.tableView.scrollToRowAtIndexPath(path, atScrollPosition: UITableViewScrollPosition.None, animated: false)
+                self.tableView.reloadData()
+            }
+            }
+        }
     }
+
+
     
     //header collectionView
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let sectionView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: sectionID, forIndexPath: indexPath) as! SingleGifSectionView
         sectionView.setHeaderData(headerDatas[indexPath.section])
         return sectionView
-     }
+    }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         if section == 0 {
@@ -152,7 +210,7 @@ extension SingleGifViewController: UICollectionViewDelegate,UICollectionViewData
         if section == 0 {
             return CGSizeZero
         }
-       return headerSize!
+        return headerSize!
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -160,30 +218,6 @@ extension SingleGifViewController: UICollectionViewDelegate,UICollectionViewData
         let height = width / cellScale
         return CGSize(width: width, height: height)
     }
-    
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        if scrollView.isKindOfClass(UICollectionView) {
-             isScrollTabelView = true
-        }
-    }
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollView.isKindOfClass(UIScrollView) {
-            if isScrollTabelView == true {
-                
-                
-                
-                
-                
-                
-                
-                
-            }
-       }
-        
-    }
-    
-    
 }
 
 
@@ -198,7 +232,6 @@ class collectionLayout: UICollectionViewFlowLayout {
 
 /// 分组头部
 class SingleGifSectionView: UICollectionReusableView {
-    
     @IBOutlet weak var titleLbl: UILabel!
     func setHeaderData(titleString:String){
       titleLbl.text = titleString
