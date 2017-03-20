@@ -18,12 +18,12 @@ class SearchResultViewController: UIViewController {
 
     
     override func loadView() {
-     let classString = String(self.dynamicType)
-     NSBundle.mainBundle().loadNibNamed(classString, owner: self, options: nil)
+     let classString = String(describing: type(of: self))
+     Bundle.main.loadNibNamed(classString, owner: self, options: nil)
     }
     
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
          super.viewWillDisappear(animated)
     }
     
@@ -37,7 +37,7 @@ class SearchResultViewController: UIViewController {
         setupFrame()
     }
     
-    private func setupUI(){
+    fileprivate func setupUI(){
     view.backgroundColor = Color_GlobalBackground
     navigationItem.titleView = searchBar
     navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
@@ -47,40 +47,40 @@ class SearchResultViewController: UIViewController {
     }
     
     
-    private func setupFrame(){
+    fileprivate func setupFrame(){
     
         
     
     }
     
    
-    @objc private func leftBtnAction(){
+    @objc fileprivate func leftBtnAction(){
     
     
     
     }
    
     
-    @objc private func rightBtnAction(){
+    @objc fileprivate func rightBtnAction(){
         
     
         
     }
     
     
-    private lazy var leftBtn: UIButton = UIButton(backTarget: self, action: #selector(SearchResultViewController.leftBtnAction))
+    fileprivate lazy var leftBtn: UIButton = UIButton(backTarget: self, action: #selector(SearchResultViewController.leftBtnAction))
     
-    private lazy var rightBtn: UIButton = UIButton(sortTarget: self, action: #selector(SearchResultViewController.rightBtnAction))
+    fileprivate lazy var rightBtn: UIButton = UIButton(sortTarget: self, action: #selector(SearchResultViewController.rightBtnAction))
     
     
     
     // MARK: - 懒加载
-    private lazy var searchBar: UISearchBar = {
+    fileprivate lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.delegate = self
         searchBar.placeholder = "快选一份礼物，送给亲爱的Ta吧"
-        searchBar.tintColor = UIColor.whiteColor()
-        searchBar.backgroundImage = UINavigationBar.appearance().backgroundImageForBarMetrics(UIBarMetrics.Default)
+        searchBar.tintColor = UIColor.white
+        searchBar.backgroundImage = UINavigationBar.appearance().backgroundImage(for: UIBarMetrics.default)
         return searchBar
     }()
     

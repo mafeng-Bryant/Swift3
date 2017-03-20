@@ -22,36 +22,36 @@ class PPTopCollectionView: UICollectionView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupUI(){
-        backgroundColor = UIColor.whiteColor()
+    fileprivate func setupUI(){
+        backgroundColor = UIColor.white
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
-        pagingEnabled = false
+        isPagingEnabled = false
         delegate = self;
         dataSource = self;
-        registerNib(UINib(nibName: "TopicCell", bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
+        register(UINib(nibName: "TopicCell", bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
     }
 }
 
 extension PPTopCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellReuseIdentifier, forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath)
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100.0, height: 100.0)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(cellMargin, cellMargin, cellMargin, cellMargin);
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         
     }
@@ -66,17 +66,17 @@ class TopicCell: UICollectionViewCell {
         super.awakeFromNib()
         
         photoImageView.clipsToBounds = true
-        photoImageView.contentMode =  UIViewContentMode.ScaleAspectFill;
+        photoImageView.contentMode =  UIViewContentMode.scaleAspectFill;
         photoImageView.image = UIImage(named: "strategy_\(Int(arc4random() % 17) + 1).jpg")
     }
 }
 
 class PPTopFlowLayout: UICollectionViewFlowLayout {
     
-    override func prepareLayout() {
-        super.prepareLayout()
+    override func prepare() {
+        super.prepare()
         minimumInteritemSpacing = cellMargin * 0.5
         minimumLineSpacing = cellMargin
-        scrollDirection = UICollectionViewScrollDirection.Horizontal
+        scrollDirection = UICollectionViewScrollDirection.horizontal
     }
 }

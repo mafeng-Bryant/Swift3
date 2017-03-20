@@ -24,10 +24,10 @@ class BaseStrategyCell: UITableViewCell {
     }
     
     // MARK: - 视图
-    private func setupUI() {
-        selectionStyle = UITableViewCellSelectionStyle.None
+    fileprivate func setupUI() {
+        selectionStyle = UITableViewCellSelectionStyle.none
         layer.borderWidth = 3
-        layer.borderColor = Color_GlobalBackground.CGColor
+        layer.borderColor = Color_GlobalBackground.cgColor
         
         tagBtn.layer.cornerRadius = 5.0
         tagBtn.layer.masksToBounds = true
@@ -35,18 +35,18 @@ class BaseStrategyCell: UITableViewCell {
         headBtn.layer.masksToBounds = true
         
         coverImageview.clipsToBounds = true
-        coverImageview.contentMode =  UIViewContentMode.ScaleAspectFill;
+        coverImageview.contentMode =  UIViewContentMode.scaleAspectFill;
         coverImageview.image = UIImage(named: "strategy_\(Int(arc4random() % 17) + 1).jpg")
     }
     
     // MARK: - 事件
-    @IBAction func tagBtnAction(sender: AnyObject) {
+    @IBAction func tagBtnAction(_ sender: AnyObject) {
     }
     
-    @IBAction func headBtnAction(sender: AnyObject) {
+    @IBAction func headBtnAction(_ sender: AnyObject) {
     }
     
-    @IBAction func priseBtnAction(sender: AnyObject) {
+    @IBAction func priseBtnAction(_ sender: AnyObject) {
     }
     
 }

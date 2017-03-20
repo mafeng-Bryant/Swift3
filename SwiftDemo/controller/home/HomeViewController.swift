@@ -29,7 +29,7 @@ class HomeViewController: PPBaseViewController {
         setUpUIFrame()
     }
     
-    private  func setUpUI(){
+    fileprivate  func setUpUI(){
         view.backgroundColor = Color_GlobalBackground
         navigationItem.leftBarButtonItem = UIBarButtonItem(gitTarget: self,action: #selector(HomeViewController.giftAction))
         navigationItem.rightBarButtonItem = UIBarButtonItem(searchTarget: self,action:  #selector(HomeViewController.searchBarAction))
@@ -45,44 +45,44 @@ class HomeViewController: PPBaseViewController {
         }
     }
     
-    private lazy var titleImageView:UIImageView = {
+    fileprivate lazy var titleImageView:UIImageView = {
         let image = UIImage(named: "logo")
         let imageView = UIImageView(image: image)
-        imageView.contentMode = UIViewContentMode.ScaleAspectFit
-        imageView.bounds = CGRectMake(0, 0, 20 * (image!.size.width / image!.size.height), 20)
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.bounds = CGRect(x: 0, y: 0, width: 20 * (image!.size.width / image!.size.height), height: 20)
        return imageView
     }()
     
-    private lazy var scrollView: UIScrollView = {
+    fileprivate lazy var scrollView: UIScrollView = {
        let view = UIScrollView()
         view.delegate = self
         view.showsHorizontalScrollIndicator = false
-        view.pagingEnabled = true
+        view.isPagingEnabled = true
         return view;
     }()
     
-    private lazy var popoverCategoryView :PopoverCategoryView = {
+    fileprivate lazy var popoverCategoryView :PopoverCategoryView = {
      var view = PopoverCategoryView.popoverCategoryView()
      view.categoryTitles = self.categotyTitles
      view.delegate = self
      return view
     }()
     
-    private func setUpUIFrame(){
-      popoverCategoryView.frame  = CGRectMake(0, 0, view.bounds.width, 44)
-      scrollView.frame = CGRectMake(0, CGRectGetMaxY(popoverCategoryView.frame), view.frame.size.width, view.bounds.height - 44 - popoverCategoryView.bounds.height)
+    fileprivate func setUpUIFrame(){
+      popoverCategoryView.frame  = CGRect(x: 0, y: 0, width: view.bounds.width, height: 44)
+      scrollView.frame = CGRect(x: 0, y: popoverCategoryView.frame.maxY, width: view.frame.size.width, height: view.bounds.height - 44 - popoverCategoryView.bounds.height)
         for i in 0..<cacheCategoryViews.count {
             let view = cacheCategoryViews[i];
-            view.frame = CGRectMake(scrollView.frame.width * CGFloat(i), 0, scrollView.frame.width, scrollView.frame.height);
+            view.frame = CGRect(x: scrollView.frame.width * CGFloat(i), y: 0, width: scrollView.frame.width, height: scrollView.frame.height);
        }
-      scrollView.contentSize = CGSizeMake(CGFloat(categotyTitles.count) * scrollView.frame.size.width, 0)
+      scrollView.contentSize = CGSize(width: CGFloat(categotyTitles.count) * scrollView.frame.size.width, height: 0)
    }
     
-    @objc private func giftAction(){
+    @objc fileprivate func giftAction(){
      
     }
     
-    @objc private func searchBarAction(){
+    @objc fileprivate func searchBarAction(){
      navigationController?.pushViewController(PPSearchViewController(), animated: true)
     }
     
@@ -94,17 +94,17 @@ class HomeViewController: PPBaseViewController {
 
 extension HomeViewController: PPBaseStrategyFeedViewControllerDelegate
 {
-    func clickChanelIndex(dicrection: TableViewScrollingToDicrection) {
-        if dicrection == TableViewScrollingToDicrection.TableViewScrollingToDown {
-           UIView.animateWithDuration(0.08, animations: {
+    func clickChanelIndex(_ dicrection: TableViewScrollingToDicrection) {
+        if dicrection == TableViewScrollingToDicrection.tableViewScrollingToDown {
+           UIView.animate(withDuration: 0.08, animations: {
                 self.popoverCategoryView.frame.origin.y = 0
-                self.scrollView.frame.origin.y = max(0,CGRectGetMaxY(self.popoverCategoryView.frame))
+                self.scrollView.frame.origin.y = max(0,self.popoverCategoryView.frame.maxY)
                 self.scrollView.frame.size.height = self.view.bounds.height - self.scrollView.frame.origin.y - 44
             })
-          }else if dicrection == TableViewScrollingToDicrection.TableViewScrollingToUp{
-            UIView.animateWithDuration(0.08, animations: {
+          }else if dicrection == TableViewScrollingToDicrection.tableViewScrollingToUp{
+            UIView.animate(withDuration: 0.08, animations: {
                 self.popoverCategoryView.frame.origin.y = -self.popoverCategoryView.bounds.height
-                self.scrollView.frame.origin.y = max(0,CGRectGetMaxY(self.popoverCategoryView.frame))
+                self.scrollView.frame.origin.y = max(0,self.popoverCategoryView.frame.maxY)
                 self.scrollView.frame.size.height = self.view.bounds.height - self.scrollView.frame.origin.y - 44
             })
         }
@@ -113,13 +113,13 @@ extension HomeViewController: PPBaseStrategyFeedViewControllerDelegate
 
 extension HomeViewController: PopoverCategoryViewDelegate
 {
-    func clickChanelIndex(index: NSInteger){
-     scrollView.setContentOffset(CGPointMake(CGFloat(index) * scrollView.bounds.width, 0), animated: true)
+    func clickChanelIndex(_ index: NSInteger){
+     scrollView.setContentOffset(CGPoint(x: CGFloat(index) * scrollView.bounds.width, y: 0), animated: true)
     }
 }
 
 extension HomeViewController: UIScrollViewDelegate {
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
        let index =  scrollView.contentOffset.x / scrollView.frame.size.width
        popoverCategoryView.scrollCategoryBtnByIndex(NSInteger(index))
     }

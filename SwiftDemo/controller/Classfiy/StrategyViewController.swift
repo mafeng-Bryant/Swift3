@@ -19,7 +19,7 @@ private let sectionID = "StrategySectionView"
 
 class StrategyViewController: PPBaseViewController {
 
-    private var headerSize:CGSize?
+    fileprivate var headerSize:CGSize?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -30,23 +30,23 @@ class StrategyViewController: PPBaseViewController {
        setupFrame()
     }
     
-    private func setupUI(){
+    fileprivate func setupUI(){
     automaticallyAdjustsScrollViewInsets = false
-    view.backgroundColor = UIColor.whiteColor()
+    view.backgroundColor = UIColor.white
     view.addSubview(collectionView)
     }
   
-    private lazy var collectionView:UICollectionView  = {
-        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: StrategyCollectionFlowLayout())
+    fileprivate lazy var collectionView:UICollectionView  = {
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: StrategyCollectionFlowLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.whiteColor()
+        collectionView.backgroundColor = UIColor.white
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.registerNib(UINib(nibName: "StrategyColumnCell", bundle: nil), forCellWithReuseIdentifier: columnCellID)
-        collectionView.registerNib(UINib(nibName: "StrategyCategoryCell", bundle: nil), forCellWithReuseIdentifier: categoryCellID)
-        collectionView.registerNib(UINib(nibName: "StrategySectionView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: sectionID)
-        let section = NSBundle.mainBundle().loadNibNamed("StrategySectionView", owner: self, options: nil).last!
+        collectionView.register(UINib(nibName: "StrategyColumnCell", bundle: nil), forCellWithReuseIdentifier: columnCellID)
+        collectionView.register(UINib(nibName: "StrategyCategoryCell", bundle: nil), forCellWithReuseIdentifier: categoryCellID)
+        collectionView.register(UINib(nibName: "StrategySectionView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: sectionID)
+        let section = Bundle.main.loadNibNamed("StrategySectionView", owner: self, options: nil)?.last!
         let collectionViewLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         collectionViewLayout.headerReferenceSize = CGSize(width: ScreenWidth, height: section.size.height)
         self.headerSize = collectionViewLayout.headerReferenceSize 
@@ -55,7 +55,7 @@ class StrategyViewController: PPBaseViewController {
     
     
     
-    private func setupFrame(){
+    fileprivate func setupFrame(){
        collectionView.frame = view.bounds
     }
     
@@ -68,37 +68,37 @@ class StrategyViewController: PPBaseViewController {
 
 extension StrategyViewController: UICollectionViewDelegate,UICollectionViewDataSource {
  
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 6
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return section == 0 ? 1 : 6
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         /// 栏目
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(columnCellID, forIndexPath: indexPath) as! StrategyColumnCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: columnCellID, for: indexPath) as! StrategyColumnCell
             return cell
         }
         /// 分类
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(categoryCellID, forIndexPath: indexPath) as! StrategyCategoryCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryCellID, for: indexPath) as! StrategyCategoryCell
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        let sectionView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: sectionID, forIndexPath: indexPath) as! StrategySectionView
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let sectionView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: sectionID, for: indexPath) as! StrategySectionView
         sectionView.viewAllBtn.tag = indexPath.section
         return sectionView
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       //  navigationController?.pushViewController(CommonStrategyViewController(), animated: true)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
             return CGSize(width: collectionView.bounds.width, height: columnCellHeight)
         }
@@ -107,16 +107,16 @@ extension StrategyViewController: UICollectionViewDelegate,UICollectionViewDataS
         return CGSize(width: width, height: height)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         if section == 0 {
             return UIEdgeInsetsMake(0, cellMargin, 0, cellMargin);
         }
         return UIEdgeInsetsMake(cellMargin, cellMargin, cellMargin, cellMargin);
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 0 {
-            return CGSizeMake(headerSize!.width, headerSize!.height - 12)
+            return CGSize(width: headerSize!.width, height: headerSize!.height - 12)
         }
         return headerSize!
     }    
@@ -124,11 +124,11 @@ extension StrategyViewController: UICollectionViewDelegate,UICollectionViewDataS
 
 
 class StrategyCollectionFlowLayout: UICollectionViewFlowLayout {
-    override func prepareLayout() {
-    super.prepareLayout()
+    override func prepare() {
+    super.prepare()
     minimumInteritemSpacing = cellMargin*0.5
     minimumLineSpacing = cellMargin
-    scrollDirection = UICollectionViewScrollDirection.Vertical
+    scrollDirection = UICollectionViewScrollDirection.vertical
     }
 }
 

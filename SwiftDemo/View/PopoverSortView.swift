@@ -30,22 +30,22 @@ class PopoverSortView: UIView {
         setupFrame()
     }
     
-    private func setupUI(){
-       hidden = true
+    fileprivate func setupUI(){
+       isHidden = true
        addSubview(bgImageView)
     
-        tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
+        tableView = UITableView(frame: CGRect.zero, style: UITableViewStyle.plain)
         tableView!.delegate = self
         tableView!.dataSource = self
         tableView!.sectionFooterHeight = 0.0001
         tableView!.sectionHeaderHeight = 0.0001
         tableView!.backgroundView = nil
-        tableView?.scrollEnabled = false
-        tableView!.backgroundColor = UIColor.clearColor()
-        tableView!.separatorInset = UIEdgeInsetsZero
-        tableView!.layoutMargins = UIEdgeInsetsZero
+        tableView?.isScrollEnabled = false
+        tableView!.backgroundColor = UIColor.clear
+        tableView!.separatorInset = UIEdgeInsets.zero
+        tableView!.layoutMargins = UIEdgeInsets.zero
         tableView!.separatorColor = UIColor(red: 120.0/255.0, green: 120.0/255.0, blue: 120.0/255.0, alpha: 1.0)
-        tableView!.registerNib(UINib(nibName: "PopoverSortCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: cellIdentifier)
+        tableView!.register(UINib(nibName: "PopoverSortCell", bundle: Bundle.main), forCellReuseIdentifier: cellIdentifier)
         tableView!.tableFooterView = UIView()
         addSubview(tableView!)
        //给蒙层绑定事件
@@ -53,17 +53,17 @@ class PopoverSortView: UIView {
         maskCoverView.addGestureRecognizer(tap)
     }
     
-     @objc private func hiddenPopoerView(){
+     @objc fileprivate func hiddenPopoerView(){
       maskCoverView.removeFromSuperview()
       hiddenSortView()
     }
     
-    private func  setupFrame(){
+    fileprivate func  setupFrame(){
       bgImageView.frame = bounds
-      tableView?.frame = CGRectMake(0, 0, bounds.width, bounds.height)
+      tableView?.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height)
     }
     
-    private lazy var maskCoverView: MaskCoverView = MaskCoverView()
+    fileprivate lazy var maskCoverView: MaskCoverView = MaskCoverView()
 
     
    internal func showSortView(){
@@ -79,48 +79,48 @@ class PopoverSortView: UIView {
     let newanchorPoint = CGPoint(x: 0.5, y: 0.0)
     let newpositionX = oldposition.x + (newanchorPoint.x - oldanchorPoint.x)  * bounds.size.width
     let newpositionY = oldposition.y + (newanchorPoint.y - oldanchorPoint.y)  * bounds.size.height
-    hidden = false
-    transform = CGAffineTransformMakeScale(1.0, 0.0)
+    isHidden = false
+    transform = CGAffineTransform(scaleX: 1.0, y: 0.0)
     layer.anchorPoint = CGPoint(x: 0.5, y: 0.0)
     layer.position = CGPoint(x: newpositionX, y: newpositionY)
-    UIView.animateWithDuration(0.2, animations: {
-        self.transform = CGAffineTransformIdentity
+    UIView.animate(withDuration: 0.2, animations: {
+        self.transform = CGAffineTransform.identity
     })
     }
     
     internal func hiddenSortView(){
-       UIView.animateWithDuration(0.25, animations: {
-            self.transform = CGAffineTransformMakeScale(1.0, 0.000001)
-        }) { (finish) in
-               self.hidden = true
-        }
+       UIView.animate(withDuration: 0.25, animations: {
+            self.transform = CGAffineTransform(scaleX: 1.0, y: 0.000001)
+        }, completion: { (finish) in
+               self.isHidden = true
+        }) 
      }
     
-    private lazy var datas:NSArray = ["默认排序", "按热度排序", "价格从低到高", "价格从高到低"]
+    fileprivate lazy var datas:NSArray = ["默认排序", "按热度排序", "价格从低到高", "价格从高到低"]
     //
-    private lazy var bgImageView:UIImageView = UIImageView(image: UIImage(named: "popover_background_right"))
+    fileprivate lazy var bgImageView:UIImageView = UIImageView(image: UIImage(named: "popover_background_right"))
 }
 
 extension PopoverSortView:UITableViewDelegate,UITableViewDataSource {
   
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datas.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! PopoverSortCell
-        cell.layoutMargins = UIEdgeInsetsZero;
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! PopoverSortCell
+        cell.layoutMargins = UIEdgeInsets.zero;
         cell.preservesSuperviewLayoutMargins = false
         cell.textLab.text = datas[indexPath.row] as? String
-        cell.selectBtn.hidden = indexPath.row == selectRow ? false : true
+        cell.selectBtn.isHidden = indexPath.row == selectRow ? false : true
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectRow = indexPath.row
         tableView.reloadData()
     }

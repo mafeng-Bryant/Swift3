@@ -11,7 +11,7 @@ import UIKit
 private let cellIdentify = "BaseStrategyCell"
 
 protocol PPBaseStrategyFeedViewControllerDelegate:NSObjectProtocol {
-    func clickChanelIndex(dicrection: TableViewScrollingToDicrection)
+    func clickChanelIndex(_ dicrection: TableViewScrollingToDicrection)
 }
 
 class PPBaseStrategyFeedViewController: PPBaseViewController {
@@ -30,26 +30,26 @@ class PPBaseStrategyFeedViewController: PPBaseViewController {
         setupFrame()
      }
 
-    private func setupUI(){
+    fileprivate func setupUI(){
     view.addSubview(tableView)
     }
     
-    private func setupFrame(){
+    fileprivate func setupFrame(){
     tableView.frame = view.bounds
     }
     
     //MARK lazy tableView
     lazy var tableView:UITableView =  {
-       let tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
+       let tableView = UITableView(frame: CGRect.zero, style: UITableViewStyle.plain)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = Color_GlobalBackground
         tableView.showsHorizontalScrollIndicator = false
         tableView.showsVerticalScrollIndicator = false
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.sectionFooterHeight = 0.0001
         tableView.sectionHeaderHeight = 0.0001
-        tableView.registerNib(UINib(nibName: "BaseStrategyCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: cellIdentify)
+        tableView.register(UINib(nibName: "BaseStrategyCell", bundle: Bundle.main), forCellReuseIdentifier: cellIdentify)
         return tableView
     }()
 
@@ -57,37 +57,37 @@ class PPBaseStrategyFeedViewController: PPBaseViewController {
 
 extension PPBaseStrategyFeedViewController:UITableViewDelegate,UITableViewDataSource {
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 15
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentify)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentify)
         return cell!
     }
     
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 260
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     
     
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         lastContentOffsetY = scrollView.contentOffset.y
     }
     
-    func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         if lastContentOffsetY < scrollView.contentOffset.y {
            if let callback = delegate {
-              callback.clickChanelIndex(TableViewScrollingToDicrection.TableViewScrollingToUp)
+              callback.clickChanelIndex(TableViewScrollingToDicrection.tableViewScrollingToUp)
             }
         }else {
             if let callback = delegate {
-                callback.clickChanelIndex(TableViewScrollingToDicrection.TableViewScrollingToDown)
+                callback.clickChanelIndex(TableViewScrollingToDicrection.tableViewScrollingToDown)
             }
         }
     }

@@ -22,25 +22,25 @@ class StrategyColumnCell: UICollectionViewCell {
         super.awakeFromNib()
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.whiteColor()
-        collectionView.registerNib(UINib(nibName: "StrategyColumnCellCell", bundle: nil), forCellWithReuseIdentifier: cellID)
+        collectionView.backgroundColor = UIColor.white
+        collectionView.register(UINib(nibName: "StrategyColumnCellCell", bundle: nil), forCellWithReuseIdentifier: cellID)
     }
 }
 
 // MARK: - 代理
 extension StrategyColumnCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 15
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! StrategyColumnCellCell
-        cell.viewAllcoverView.hidden = indexPath.row == 14 ? false : true
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! StrategyColumnCellCell
+        cell.viewAllcoverView.isHidden = indexPath.row == 14 ? false : true
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        let tabBarViewController = UIApplication.sharedApplication().keyWindow?.rootViewController as! TabBarController
 //        let navigationController = tabBarViewController.viewControllers![tabBarViewController.selectedIndex] as! NavigationController
 //        if indexPath.row == 14 {
@@ -50,13 +50,13 @@ extension StrategyColumnCell: UICollectionViewDelegate, UICollectionViewDataSour
 //        }
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         let height = (collectionView.bounds.height - (cellMargin * CGFloat(cellColumns + 1))) / CGFloat(cellColumns)
         let width = height * cellScale
         return CGSize(width: width, height: height)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(cellMargin, cellMargin, cellMargin, cellMargin);
     }
     

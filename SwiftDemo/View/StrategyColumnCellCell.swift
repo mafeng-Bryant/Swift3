@@ -18,17 +18,17 @@ class StrategyColumnCellCell: UICollectionViewCell {
         super.awakeFromNib()
         
         photoImageView.clipsToBounds = true
-        photoImageView.contentMode =  UIViewContentMode.ScaleAspectFill;
+        photoImageView.contentMode =  UIViewContentMode.scaleAspectFill;
         photoImageView.image = UIImage(named: "strategy_\(Int(arc4random() % 17) + 1).jpg")
         
         viewAllBtn.layer.masksToBounds = true
         viewAllBtn.layer.cornerRadius = 2.0
-        viewAllBtn.layer.borderColor = viewAllBtn.titleLabel!.textColor.CGColor
+        viewAllBtn.layer.borderColor = viewAllBtn.titleLabel!.textColor.cgColor
         viewAllBtn.layer.borderWidth = 0.5
         
     }
     
-    @IBAction func viewAllBtnAction(sender: AnyObject) {
+    @IBAction func viewAllBtnAction(_ sender: AnyObject) {
     }
     
 }

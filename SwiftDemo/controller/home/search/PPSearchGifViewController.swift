@@ -20,7 +20,7 @@ class PPSearchGifViewController: PPBaseGoodsFeedController {
         setupFrame()
     }
     
-    private func setupUI(){
+    fileprivate func setupUI(){
        title = "选礼神器"
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView:rightBtn)
@@ -29,34 +29,34 @@ class PPSearchGifViewController: PPBaseGoodsFeedController {
     }
     
     
-    private func setupFrame(){
+    fileprivate func setupFrame(){
         let height:CGFloat = 44.0
-        categoryView.frame = CGRect(origin: CGPointZero, size: CGSizeMake(view.bounds.width, height))
+        categoryView.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: view.bounds.width, height: height))
         collectionView.frame.origin.y = height
         collectionView.frame.size.height = view.bounds.height - height
    }
     
     
-    private lazy var sortView:PopoverSortView = PopoverSortView(frame: CGRectMake(ScreenWidth - 155,0,155,190))
+    fileprivate lazy var sortView:PopoverSortView = PopoverSortView(frame: CGRect(x: ScreenWidth - 155,y: 0,width: 155,height: 190))
     
-    private lazy var categoryView:PopoverSortGifView = {
+    fileprivate lazy var categoryView:PopoverSortGifView = {
      let view = PopoverSortGifView.popoverSortGifView()
      return view
    }()
     
     
-    private lazy var leftBtn:UIButton = UIButton(backTarget:self, action:#selector(PPSearchGifViewController.leftBtnAction))
+    fileprivate lazy var leftBtn:UIButton = UIButton(backTarget:self, action:#selector(PPSearchGifViewController.leftBtnAction))
     
-    private lazy var rightBtn:UIButton = UIButton(sortTarget:self, action:#selector(PPSearchGifViewController.rightBtnAction))
+    fileprivate lazy var rightBtn:UIButton = UIButton(sortTarget:self, action:#selector(PPSearchGifViewController.rightBtnAction))
     
     
     //event response
-    @objc private func leftBtnAction(){
-     navigationController?.popViewControllerAnimated(true)
+    @objc fileprivate func leftBtnAction(){
+     navigationController?.popViewController(animated: true)
     }
     
-    @objc private func rightBtnAction(){
-        if sortView.hidden {
+    @objc fileprivate func rightBtnAction(){
+        if sortView.isHidden {
             sortView.showSortView()
         }else {
           sortView.hiddenSortView()

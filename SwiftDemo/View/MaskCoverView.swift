@@ -11,7 +11,7 @@ import UIKit
 class MaskCoverView: UIView {
 
     override init(frame: CGRect) {
-        super.init(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
+        super.init(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight))
          backgroundColor = UIColor(white: 0,alpha: 0.3)
     }
     

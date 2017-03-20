@@ -16,7 +16,7 @@ class StrategyCategoryCell: UICollectionViewCell {
         super.awakeFromNib()
         
         photoImageView.clipsToBounds = true
-        photoImageView.contentMode =  UIViewContentMode.ScaleAspectFill;
+        photoImageView.contentMode =  UIViewContentMode.scaleAspectFill;
         photoImageView.image = UIImage(named: "strategy_\(Int(arc4random() % 17) + 1).jpg")
     }
 }

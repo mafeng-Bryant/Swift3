@@ -16,14 +16,14 @@ class PPTabBarController: UITabBarController {
         UITabBar.setupStyle()
     }
    
-    private func addChildViewControllers(){
+    fileprivate func addChildViewControllers(){
         addChildViewController(HomeViewController(), title: "首页", imageName: "tabbar_home")
         addChildViewController(HotViewController(), title: "热门", imageName: "tabbar_gift")
         addChildViewController(ClassfiyViewController(), title: "分类", imageName: "tabbar_category")
         addChildViewController(MeViewController(), title: "我", imageName: "tabbar_me")
     }
     
-    private func addChildViewController(childController: UIViewController ,title:String,imageName:String) {
+    fileprivate func addChildViewController(_ childController: UIViewController ,title:String,imageName:String) {
         childController.tabBarItem.image = UIImage(named: imageName)
         childController.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")
         childController.tabBarItem.title = title

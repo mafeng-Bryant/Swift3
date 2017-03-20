@@ -20,10 +20,10 @@ class PPBaseNavigationController: UINavigationController {
     lazy var backBtn: UIButton = UIButton(backTarget: self, action: #selector(PPBaseNavigationController.backBtnAction))
     
     func backBtnAction(){
-    self.popViewControllerAnimated(true)
+    self.popViewController(animated: true)
     }
      
-    override func pushViewController(viewController: UIViewController, animated: Bool) {
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if self.childViewControllers.count>1 {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView:backBtn)
             viewController.hidesBottomBarWhenPushed = true

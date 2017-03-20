@@ -27,7 +27,7 @@ class PopoverSortGifView: UIView {
     var cacheSelectTagBtn = [String: UIButton]()
     
     class func popoverSortGifView() -> PopoverSortGifView {
-        return NSBundle.mainBundle().loadNibNamed("PopoverSortGifView", owner: nil, options: nil).last as! PopoverSortGifView
+        return Bundle.main.loadNibNamed("PopoverSortGifView", owner: nil, options: nil)!.last as! PopoverSortGifView
     }
     
     override func awakeFromNib() {
@@ -36,7 +36,7 @@ class PopoverSortGifView: UIView {
     }
     
     // MARK: - 视图
-    private func setupUI() {
+    fileprivate func setupUI() {
         /// 记录当前选项
         subjectBtn.tag = 0
         characterBtn.tag = 1
@@ -48,7 +48,7 @@ class PopoverSortGifView: UIView {
         /// 创建筛选视图
         let allTitles = [["全部", "男票", "女盆友", "闺蜜们", "基友", "爸爸妈妈", "小盆友", "同事"], ["全部", "生日", "情人节", "结婚", "新年", "感谢", "纪念日", "乔迁", "圣诞节"], ["全部", "萌", "小清新", "创意", "奇葩", "文艺范", "科技感", "设计感"], ["全部", "50以下", "50-200", "200-500", "500-1000", "1000以上"]]
         for i in 0 ..< allTitles.count {
-            let popView = createPopoverView(i, titles: allTitles[i])
+            let popView = createPopoverView(i, titles: allTitles[i] as NSArray)
             popoCoverDict["\(i)"] = popView
         }
     }
@@ -61,7 +61,7 @@ class PopoverSortGifView: UIView {
      
      - returns: 返回筛选视图
      */
-    private func createPopoverView(section:NSInteger, titles: NSArray) -> UIView {
+    fileprivate func createPopoverView(_ section:NSInteger, titles: NSArray) -> UIView {
         let moveViewHeight:CGFloat = 30.0
         var popoverViewHeight:CGFloat = 0
         let popoverView = UIView()
@@ -74,29 +74,29 @@ class PopoverSortGifView: UIView {
             let y = (btnHeight + btnMargin) * CGFloat(row) + btnMargin;
             let btn = createBtn(section, row: i, title: titles[i] as! NSString)
             popoverView.addSubview(btn)
-            btn.frame = CGRectMake(x, y, btnWidth, btnHeight)
-            popoverViewHeight = CGRectGetMaxY(btn.frame) + btnMargin
+            btn.frame = CGRect(x: x, y: y, width: btnWidth, height: btnHeight)
+            popoverViewHeight = btn.frame.maxY + btnMargin
         }
-        popoverView.frame = CGRectMake(0, -popoverViewHeight, ScreenWidth, popoverViewHeight + moveViewHeight)
+        popoverView.frame = CGRect(x: 0, y: -popoverViewHeight, width: ScreenWidth, height: popoverViewHeight + moveViewHeight)
         /// 添加底部拖拽视图
         let moveView = UIView()
-        moveView.frame = CGRect(x: 0, y: CGRectGetHeight(popoverView.frame) - moveViewHeight, width: popoverView.bounds.width, height: moveViewHeight)
-        moveView.backgroundColor = UIColor.whiteColor()
+        moveView.frame = CGRect(x: 0, y: popoverView.frame.height - moveViewHeight, width: popoverView.bounds.width, height: moveViewHeight)
+        moveView.backgroundColor = UIColor.white
         popoverView.addSubview(moveView)
         let line = UIView()
-        line.frame = CGRectMake(0, 0, moveView.bounds.width, 0.5)
+        line.frame = CGRect(x: 0, y: 0, width: moveView.bounds.width, height: 0.5)
         line.backgroundColor = UIColor (red: 223.0/255.0, green: 223.0/255.0, blue: 223.0/255.0, alpha: 1.0)
         moveView.addSubview(line)
         let moveImageView = UIImageView(image: UIImage(named: "giftcategorydetail_icon_fixed"))
-        moveImageView.frame.origin.x = (CGRectGetWidth(moveView.frame) -
+        moveImageView.frame.origin.x = (moveView.frame.width -
             moveImageView.image!.size.width) * 0.5
-        moveImageView.frame.origin.y = (CGRectGetHeight(moveView.frame) -
+        moveImageView.frame.origin.y = (moveView.frame.height -
             moveImageView.image!.size.height) * 0.5
         moveView.addSubview(moveImageView)
         
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(PopoverSortGifView.viewDragged(_:)))
         popoverView.addGestureRecognizer(gesture)
-        popoverView.userInteractionEnabled = true
+        popoverView.isUserInteractionEnabled = true
         
         return popoverView
     }
@@ -104,59 +104,59 @@ class PopoverSortGifView: UIView {
     /**
      创建标签按钮
      */
-    private func createBtn(section: NSInteger, row: NSInteger, title: NSString) -> UIButton {
+    fileprivate func createBtn(_ section: NSInteger, row: NSInteger, title: NSString) -> UIButton {
         let btn = UIButton(srotTagTarget: self, action: #selector(PopoverSortGifView.tagBtnAction(_:)))
         btn.tag = section
-        btn.setTitle(title as String, forState: UIControlState.Normal)
+        btn.setTitle(title as String, for: UIControlState())
         if row == 0 {
             /// 缓存当前所选的按钮
-            btn.selected = true
+            btn.isSelected = true
             cacheSelectTagBtn["\(btn.tag)"] = btn
         } else {
-            btn.selected = false
+            btn.isSelected = false
         }
         return btn
     }
     
     // MARK: - 事件
-    @IBAction func subjectBtnAction(sender: UIButton) {
+    @IBAction func subjectBtnAction(_ sender: UIButton) {
         showPopoverView(sender)
     }
     
-    @IBAction func occasionBtnAction(sender: UIButton) {
+    @IBAction func occasionBtnAction(_ sender: UIButton) {
         showPopoverView(sender)
     }
     
-    @IBAction func characterBtnAction(sender: UIButton) {
+    @IBAction func characterBtnAction(_ sender: UIButton) {
         showPopoverView(sender)
     }
     
-    @IBAction func priceBtnAction(sender: UIButton) {
+    @IBAction func priceBtnAction(_ sender: UIButton) {
         showPopoverView(sender)
     }
     
-    @objc func viewDragged(gestureRecognizer: UIPanGestureRecognizer) {
+    @objc func viewDragged(_ gestureRecognizer: UIPanGestureRecognizer) {
         /// 从缓存取出当前按钮下的筛选视图
         let popCover = popoCoverDict["\(currPopBtn!.tag)"]
         let maxCenterY = popCover!.frame.height * 0.5 + bounds.height
-        if gestureRecognizer.state == UIGestureRecognizerState.Began || gestureRecognizer.state == UIGestureRecognizerState.Changed {
+        if gestureRecognizer.state == UIGestureRecognizerState.began || gestureRecognizer.state == UIGestureRecognizerState.changed {
             if gestureRecognizer.view!.center.y > maxCenterY {
                 return
             }
-            let translation = gestureRecognizer.translationInView(self)
+            let translation = gestureRecognizer.translation(in: self)
             if(gestureRecognizer.view!.center.y < maxCenterY) {
-                gestureRecognizer.view!.center = CGPointMake(gestureRecognizer.view!.center.x, gestureRecognizer.view!.center.y + translation.y)
+                gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: gestureRecognizer.view!.center.y + translation.y)
             }else {
-                gestureRecognizer.view!.center = CGPointMake(gestureRecognizer.view!.center.x, maxCenterY - 0.001)
+                gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: maxCenterY - 0.001)
             }
-            gestureRecognizer.setTranslation(CGPointMake(0,0), inView: self)
+            gestureRecognizer.setTranslation(CGPoint(x: 0,y: 0), in: self)
         }
-        if gestureRecognizer.state == UIGestureRecognizerState.Ended {
+        if gestureRecognizer.state == UIGestureRecognizerState.ended {
             if(gestureRecognizer.view!.center.y < maxCenterY * 0.5) {
                 hidePopoverView()
             } else {
-                 gestureRecognizer.view!.center = CGPointMake(gestureRecognizer.view!.center.x, maxCenterY)
-                gestureRecognizer.setTranslation(CGPointMake(0,0), inView: self)
+                 gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: maxCenterY)
+                gestureRecognizer.setTranslation(CGPoint(x: 0,y: 0), in: self)
             }
         }
         
@@ -165,21 +165,21 @@ class PopoverSortGifView: UIView {
     /**
      标签按钮
      */
-    @objc private func tagBtnAction(btn: UIButton) {
+    @objc fileprivate func tagBtnAction(_ btn: UIButton) {
         
         print(btn.titleLabel?.text)
         if let cacheBtn = cacheSelectTagBtn["\(btn.tag)"] {
-            cacheBtn.selected = false
+            cacheBtn.isSelected = false
         }
-        btn.selected = true
+        btn.isSelected = true
         cacheSelectTagBtn["\(btn.tag)"] = btn
     }
     
     /**
      显示筛选视图
      */
-    private func showPopoverView(sender: UIButton) {
-        sender.selected = !sender.selected
+    fileprivate func showPopoverView(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
         /// 重复点击按钮
         if currPopBtn == sender {
             hidePopoverView()
@@ -187,7 +187,7 @@ class PopoverSortGifView: UIView {
         }
         /// 更改上一个按钮状态
         if let btn = currPopBtn {
-            btn.selected = !btn.selected
+            btn.isSelected = !btn.isSelected
         }
         /// 保存当前按钮
         currPopBtn = sender
@@ -208,9 +208,9 @@ class PopoverSortGifView: UIView {
         } else {
             /// 动画显示
             showingPopoCover = true
-            UIView.animateWithDuration(0.3) {
+            UIView.animate(withDuration: 0.3, animations: {
                 view.frame.origin.y = self.bounds.height
-            }
+            }) 
         }
         currPopCoverView = view
         
@@ -219,7 +219,7 @@ class PopoverSortGifView: UIView {
     /**
      隐藏筛选视图
      */
-    @objc private func hidePopoverView() {
+    @objc fileprivate func hidePopoverView() {
         /// 隐藏当前筛选视图
         guard let view = currPopCoverView else {
             return
@@ -228,11 +228,11 @@ class PopoverSortGifView: UIView {
         showingPopoCover = false
         currPopBtn = nil
         /// 动画隐藏
-        UIView.animateWithDuration(0.3, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
                 view.frame.origin.y = -view.bounds.height
-            }) { (_) in
+            }, completion: { (_) in
                 view.removeFromSuperview()
-        }
+        }) 
         /// 隐藏蒙版
         hideMaskCoverView()
     }
@@ -240,17 +240,17 @@ class PopoverSortGifView: UIView {
     /**
      显示蒙版
      */
-    private func showMaskCoverView(belowSubview: UIView) {
+    fileprivate func showMaskCoverView(_ belowSubview: UIView) {
         superview!.insertSubview(maskCoverView, belowSubview: self)
     }
     
     /**
      隐藏蒙版
      */
-    @objc private func hideMaskCoverView() {
+    @objc fileprivate func hideMaskCoverView() {
         maskCoverView.removeFromSuperview()
     }
     
     // MARK: - 懒加载
-    private lazy var maskCoverView: MaskCoverView = MaskCoverView()
+    fileprivate lazy var maskCoverView: MaskCoverView = MaskCoverView()
 }

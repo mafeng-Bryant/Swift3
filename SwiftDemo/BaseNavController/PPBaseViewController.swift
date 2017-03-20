@@ -14,19 +14,19 @@ class PPBaseViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PPBaseViewController.login), name: Notification_Login, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PPBaseViewController.login), name: NSNotification.Name(rawValue: Notification_Login), object: nil)
     }
   
-    override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: Notification_Login, object: nil)
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: Notification_Login), object: nil)
     }
     
-    @objc private func login(){
+    @objc fileprivate func login(){
      let xib = UIStoryboard(name: "LoginViewController", bundle: nil)
      let login = xib.instantiateInitialViewController()!
-        presentViewController(login, animated: true, completion: nil)
+        present(login, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

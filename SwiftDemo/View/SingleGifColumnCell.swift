@@ -15,20 +15,20 @@ class SingleGifColumnCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        edgeLineView.hidden = true
-        titleBtn.setTitleColor(UIColor(red: 102.0/255.0, green: 102.0/255.0, blue: 102.0/255.0, alpha: 1.0), forState: UIControlState.Normal)
-        titleBtn.setTitleColor(UIColor(red: 251.0/255.0, green: 45.0/255.0, blue: 71.0/255.0, alpha: 1.0), forState: UIControlState.Selected)
+        edgeLineView.isHidden = true
+        titleBtn.setTitleColor(UIColor(red: 102.0/255.0, green: 102.0/255.0, blue: 102.0/255.0, alpha: 1.0), for: UIControlState())
+        titleBtn.setTitleColor(UIColor(red: 251.0/255.0, green: 45.0/255.0, blue: 71.0/255.0, alpha: 1.0), for: UIControlState.selected)
         
-        titleBtn.setBackgroundImage(UIImage.imageWithColor(Color_GlobalBackground, size: CGSizeZero), forState: UIControlState.Normal)
-        titleBtn.setBackgroundImage(UIImage.imageWithColor(UIColor.whiteColor(), size: CGSizeZero), forState: UIControlState.Selected)
+        titleBtn.setBackgroundImage(UIImage.imageWithColor(Color_GlobalBackground, size: CGSize.zero), for: UIControlState())
+        titleBtn.setBackgroundImage(UIImage.imageWithColor(UIColor.white, size: CGSize.zero), for: UIControlState.selected)
     }
     
-    func setHeaderTitle(title:String) {
-     titleBtn.setTitle(title, forState: UIControlState.Normal)
+    func setHeaderTitle(_ title:String) {
+     titleBtn.setTitle(title, for: UIControlState())
    }
     
-    func changeStatus(selected: Bool) {
-        titleBtn.selected = selected
-        edgeLineView.hidden = !selected
+    func changeStatus(_ selected: Bool) {
+        titleBtn.isSelected = selected
+        edgeLineView.isHidden = !selected
     }
 }

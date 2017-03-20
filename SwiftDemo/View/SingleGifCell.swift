@@ -16,7 +16,7 @@ class SingleGifCell: UICollectionViewCell {
         super.awakeFromNib()
         
         photoImageView.layer.masksToBounds = true
-        photoImageView.contentMode =  UIViewContentMode.ScaleAspectFill;
+        photoImageView.contentMode =  UIViewContentMode.scaleAspectFill;
         photoImageView.image = UIImage(named: "goods_\(Int(arc4random() % 10) + 1).jpg")
     }
 
