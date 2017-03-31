@@ -48,7 +48,7 @@ class StrategyViewController: PPBaseViewController {
         collectionView.register(UINib(nibName: "StrategySectionView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: sectionID)
         let section = Bundle.main.loadNibNamed("StrategySectionView", owner: self, options: nil)?.last!
         let collectionViewLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        collectionViewLayout.headerReferenceSize = CGSize(width: ScreenWidth, height: section.size.height)
+        collectionViewLayout.headerReferenceSize = CGSize(width: ScreenWidth, height:60)
         self.headerSize = collectionViewLayout.headerReferenceSize 
        return collectionView
     }()
