@@ -13,6 +13,7 @@
 		E21E59751D51C53C001758C2 /* SingleGifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E59731D51C53C001758C2 /* SingleGifCell.swift */; };
 		E21E59761D51C53C001758C2 /* SingleGifCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E21E59741D51C53C001758C2 /* SingleGifCell.xib */; };
 		E21E59781D51C6F1001758C2 /* SingleGifSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E21E59771D51C6F1001758C2 /* SingleGifSectionView.xib */; };
+		E2224AAE1E8E84350031CB25 /* ADController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2224AAD1E8E84350031CB25 /* ADController.swift */; };
 		E23299D11D48BF0600872492 /* PPBannerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23299D01D48BF0600872492 /* PPBannerCollectionView.swift */; };
 		E23299D31D48C0DA00872492 /* PPTopCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23299D21D48C0DA00872492 /* PPTopCollectionView.swift */; };
 		E23299D61D48D5FE00872492 /* BaseStrategyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23299D41D48D5FE00872492 /* BaseStrategyCell.swift */; };
@@ -127,6 +128,7 @@
 		E21E59731D51C53C001758C2 /* SingleGifCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleGifCell.swift; sourceTree = "<group>"; };
 		E21E59741D51C53C001758C2 /* SingleGifCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleGifCell.xib; sourceTree = "<group>"; };
 		E21E59771D51C6F1001758C2 /* SingleGifSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleGifSectionView.xib; sourceTree = "<group>"; };
+		E2224AAD1E8E84350031CB25 /* ADController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADController.swift; sourceTree = "<group>"; };
 		E23299D01D48BF0600872492 /* PPBannerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBannerCollectionView.swift; sourceTree = "<group>"; };
 		E23299D21D48C0DA00872492 /* PPTopCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTopCollectionView.swift; sourceTree = "<group>"; };
 		E23299D41D48D5FE00872492 /* BaseStrategyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStrategyCell.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				E2E2F9D91D41F2A500E94489 /* HotViewController.swift */,
+				E2224AAD1E8E84350031CB25 /* ADController.swift */,
 			);
 			path = Hot;
 			sourceTree = "<group>";
@@ -775,6 +778,7 @@
 				E2CD18C31D4B5A6700CE82D5 /* PPTitleView.swift in Sources */,
 				E23299D31D48C0DA00872492 /* PPTopCollectionView.swift in Sources */,
 				E2FF08311D3F763D00AB03BA /* NavgationBarExtension.swift in Sources */,
+				E2224AAE1E8E84350031CB25 /* ADController.swift in Sources */,
 				E2E2F9DA1D41F2A500E94489 /* HotViewController.swift in Sources */,
 				E2D83EF81D4A1FC600F7744D /* PopoverSortView.swift in Sources */,
 				E258AE2D1D41C802008349C2 /* UIImage+Extension.swift in Sources */,

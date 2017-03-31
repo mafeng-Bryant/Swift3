@@ -33,7 +33,7 @@ class HomeViewController: PPBaseViewController {
         view.backgroundColor = Color_GlobalBackground
         navigationItem.leftBarButtonItem = UIBarButtonItem(gitTarget: self,action: #selector(HomeViewController.giftAction))
         navigationItem.rightBarButtonItem = UIBarButtonItem(searchTarget: self,action:  #selector(HomeViewController.searchBarAction))
-        self.title = "SwiftDemo"
+        self.title = "Swift3"
         view.addSubview(scrollView)
         view.addSubview(popoverCategoryView)
         for i in 0..<categotyTitles.count {
